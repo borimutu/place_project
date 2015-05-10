@@ -22,38 +22,6 @@ class OthersViewController: UIViewController ,UIScrollViewDelegate,UITableViewDe
     override func viewDidLoad() {
         tableView.delegate = self
         tableView.dataSource = self
-        /*scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height*1.06)
-        
-        //MARK : - スクロールビューの設置
-        scrollView.pagingEnabled = true
-        scrollView.scrollEnabled = true
-        scrollView.directionalLockEnabled = true
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = true
-        scrollView.bounces = true
-        scrollView.scrollsToTop = false
-        scrollView.delegate = self
-        self.view.addSubview(scrollView)
-        
-        //MARK : - 各種ボタンの設置
-        addFriendButton = HTPressableButton(frame: CGRectMake(self.view.center.x-self.view.frame.width/6, 60, self.view.frame.width/3, self.view.frame.height/10), buttonStyle: HTPressableButtonStyle.Rounded)
-        addFriendButton?.setTitle("友達追加", forState: UIControlState.Normal)
-        addFriendButton?.backgroundColor = UIColor.ht_aquaColor()
-        addFriendButton?.addTarget(self, action: "addFriendButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.scrollView.addSubview(addFriendButton!)
-        
-        profileButton = HTPressableButton(frame: CGRectMake(self.view.center.x-self.view.frame.width/6, addFriendButton!.center.y+50.0, self.view.frame.width/3, self.view.frame.height/10), buttonStyle: HTPressableButtonStyle.Rounded)
-        profileButton?.setTitle("プロフィール", forState: UIControlState.Normal)
-        profileButton?.backgroundColor = UIColor.ht_aquaColor()
-        profileButton?.addTarget(self, action: "profileButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.scrollView.addSubview(profileButton!)
-        
-        settingButton = HTPressableButton(frame: CGRectMake(self.view.center.x-self.view.frame.width/6, profileButton!.center.y+50.0, self.view.frame.width/3, self.view.frame.height/10), buttonStyle: HTPressableButtonStyle.Rounded)
-        settingButton?.setTitle("設定", forState: UIControlState.Normal)
-        settingButton?.backgroundColor = UIColor.ht_aquaColor()
-        settingButton?.addTarget(self, action: "settingButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
-        self.scrollView.addSubview(settingButton!)
-        */
     }
     
     override func viewDidAppear(animated: Bool) {
