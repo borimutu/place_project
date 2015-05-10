@@ -1,0 +1,6 @@
+framework module HTPressableButton {
+  umbrella header "Pods-HTPressableButton-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,1052 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16E50D44922633316199CAA4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9750782130314F72761D1193 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6D11102F1AEE24EC00E407AD /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D11102D1AEE24EC00E407AD /* FriendsTableViewCell.swift */; };
+		6D1110301AEE24EC00E407AD /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D11102E1AEE24EC00E407AD /* FriendsTableViewCell.xib */; };
+		6D1110381AEFE76800E407AD /* user_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1110371AEFE76800E407AD /* user_placeholder@2x.png */; };
+		6D11103A1AF07D0A00E407AD /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1110391AF07D0A00E407AD /* FriendsTableViewController.swift */; };
+		6D1D35851AFC8EC60019DC5B /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D35841AFC8EC60019DC5B /* noimage.jpg */; };
+		6D353BBB1ADA1B040086A73D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BB91ADA1B040086A73D /* LoginViewController.swift */; };
+		6D353BC31ADA73810086A73D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BC11ADA73810086A73D /* DetailViewController.swift */; };
+		6D353BC71ADB83AA0086A73D /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BC51ADB83AA0086A73D /* TimelineViewController.swift */; };
+		6D353BCD1ADB8F150086A73D /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BCB1ADB8F150086A73D /* SignupViewController.swift */; };
+		6D353BD11ADB900A0086A73D /* FirststepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BCF1ADB900A0086A73D /* FirststepViewController.swift */; };
+		6D353BD51ADB90200086A73D /* SecondstepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BD31ADB90200086A73D /* SecondstepViewController.swift */; };
+		6D353BD81ADBB5ED0086A73D /* TextFieldEffects in Resources */ = {isa = PBXBuildFile; fileRef = 6D353BD71ADBB5ED0086A73D /* TextFieldEffects */; };
+		6D473A3C1AE627A7006C68FF /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D473A3B1AE627A7006C68FF /* Crashlytics.framework */; };
+		6D48E1A01AD8DEA100884C3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48E19F1AD8DEA100884C3A /* AppDelegate.swift */; };
+		6D48E1A21AD8DEA100884C3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48E1A11AD8DEA100884C3A /* ViewController.swift */; };
+		6D48E1A51AD8DEA100884C3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D48E1A31AD8DEA100884C3A /* Main.storyboard */; };
+		6D48E1A71AD8DEA100884C3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D48E1A61AD8DEA100884C3A /* Images.xcassets */; };
+		6D48E1AA1AD8DEA100884C3A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D48E1A81AD8DEA100884C3A /* LaunchScreen.xib */; };
+		6D48E1B61AD8DEA100884C3A /* DococoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D48E1B51AD8DEA100884C3A /* DococoTests.swift */; };
+		6D48E1C21AD8E21D00884C3A /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D48E1BF1AD8E21D00884C3A /* close.png */; };
+		6D7630481AE48DA700430CF8 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7630471AE48DA700430CF8 /* AddFriendViewController.swift */; };
+		6D7EC4F81ADD61B200364757 /* ThirdstepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7EC4F61ADD61B200364757 /* ThirdstepViewController.swift */; };
+		6D7EC4FC1ADD61D200364757 /* FourthstepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7EC4FA1ADD61D200364757 /* FourthstepViewController.swift */; };
+		6D8C321D1AECA8730022E1D6 /* UserDocoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C321B1AECA8730022E1D6 /* UserDocoCell.swift */; };
+		6D8C321E1AECA8730022E1D6 /* UserDocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8C321C1AECA8730022E1D6 /* UserDocoCell.xib */; };
+		6D8C32231AEE1F950022E1D6 /* TargetDocoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C32211AEE1F950022E1D6 /* TargetDocoCell.swift */; };
+		6D8C32241AEE1F950022E1D6 /* TargetDocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8C32221AEE1F950022E1D6 /* TargetDocoCell.xib */; };
+		6D8C32271AEE1FA70022E1D6 /* UserCocoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C32251AEE1FA70022E1D6 /* UserCocoCell.swift */; };
+		6D8C32281AEE1FA70022E1D6 /* UserCocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8C32261AEE1FA70022E1D6 /* UserCocoCell.xib */; };
+		6DD43C961AEBA124005F57E3 /* TargetCocoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD43C941AEBA124005F57E3 /* TargetCocoCell.swift */; };
+		6DD43C971AEBA124005F57E3 /* TargetCocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD43C951AEBA124005F57E3 /* TargetCocoCell.xib */; };
+		6DD8D95C1AE734C200C04BD9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8D95B1AE734C200C04BD9 /* ProfileViewController.swift */; };
+		6DD8D95E1AE7358300C04BD9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8D95D1AE7358300C04BD9 /* SettingViewController.swift */; };
+		6DE1F99F1AD947B5002481E1 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE1F99E1AD947B5002481E1 /* ParseUI.framework */; };
+		6DE1F9AE1AD94B29002481E1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE1F9AD1AD94B29002481E1 /* InterfaceController.swift */; };
+		6DE1F9B01AD94B29002481E1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE1F9AF1AD94B29002481E1 /* NotificationController.swift */; };
+		6DE1F9B21AD94B29002481E1 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE1F9B11AD94B29002481E1 /* GlanceController.swift */; };
+		6DE1F9B41AD94B29002481E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE1F9B31AD94B29002481E1 /* Images.xcassets */; };
+		6DE1F9B81AD94B29002481E1 /* Dococo WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 6DE1F9B71AD94B29002481E1 /* Dococo WatchKit App.app */; };
+		6DE1F9C01AD94B29002481E1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE1F9BE1AD94B29002481E1 /* Interface.storyboard */; };
+		6DE1F9C21AD94B29002481E1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE1F9C11AD94B29002481E1 /* Images.xcassets */; };
+		6DE1F9C51AD94B29002481E1 /* Dococo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6DE1F9A81AD94B29002481E1 /* Dococo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6DE9FB471AE0ECAA00C03464 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE9FB441AE0ECAA00C03464 /* TwitterKit.framework */; };
+		6DE9FB481AE0ECAA00C03464 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9FB451AE0ECAA00C03464 /* TwitterKitResources.bundle */; };
+		6DE9FB491AE0ECAA00C03464 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE9FB461AE0ECAA00C03464 /* Fabric.framework */; };
+		6DF093C61AD8E38300B44899 /* man1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093AF1AD8E38300B44899 /* man1.jpg */; };
+		6DF093C71AD8E38300B44899 /* man2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093B01AD8E38300B44899 /* man2.jpg */; };
+		6DF093C81AD8E38300B44899 /* man3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093B11AD8E38300B44899 /* man3.jpg */; };
+		6DF093C91AD8E38300B44899 /* man4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093B21AD8E38300B44899 /* man4.jpg */; };
+		6DF093CA1AD8E38300B44899 /* man5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093B31AD8E38300B44899 /* man5.jpg */; };
+		6DF093CB1AD8E38300B44899 /* man6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093B41AD8E38300B44899 /* man6.jpg */; };
+		6DF093CC1AD8E38300B44899 /* man7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093B51AD8E38300B44899 /* man7.jpg */; };
+		6DF093CD1AD8E38300B44899 /* man8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093B61AD8E38300B44899 /* man8.jpg */; };
+		6DF093CE1AD8E38300B44899 /* man9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093B71AD8E38300B44899 /* man9.jpg */; };
+		6DF093D11AD8E38300B44899 /* phone_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093BA1AD8E38300B44899 /* phone_down.png */; };
+		6DF093D21AD8E38300B44899 /* phone_receive.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093BB1AD8E38300B44899 /* phone_receive.png */; };
+		6DF093D31AD8E38300B44899 /* phone_send.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093BC1AD8E38300B44899 /* phone_send.png */; };
+		6DF093D81AD8E38300B44899 /* star_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093C11AD8E38300B44899 /* star_white.png */; };
+		6DF093E21AD8E38E00B44899 /* woman1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093DD1AD8E38E00B44899 /* woman1.jpg */; };
+		6DF093E31AD8E38E00B44899 /* woman2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093DE1AD8E38E00B44899 /* woman2.jpg */; };
+		6DF093E41AD8E38E00B44899 /* woman3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093DF1AD8E38E00B44899 /* woman3.jpg */; };
+		6DF093E51AD8E38E00B44899 /* woman4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093E01AD8E38E00B44899 /* woman4.jpg */; };
+		6DF093E61AD8E38E00B44899 /* woman5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF093E11AD8E38E00B44899 /* woman5.jpg */; };
+		6DF093F11AD8EE4600B44899 /* OthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF093EF1AD8EE4600B44899 /* OthersViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D48E1B01AD8DEA100884C3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D48E1921AD8DEA100884C3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D48E1991AD8DEA100884C3A;
+			remoteInfo = Dococo;
+		};
+		6DE1F9B91AD94B29002481E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D48E1921AD8DEA100884C3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DE1F9B61AD94B29002481E1;
+			remoteInfo = "Dococo WatchKit App";
+		};
+		6DE1F9C31AD94B29002481E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D48E1921AD8DEA100884C3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6DE1F9A71AD94B29002481E1;
+			remoteInfo = "Dococo WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6DE1F9CC1AD94B29002481E1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6DE1F9C51AD94B29002481E1 /* Dococo WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		33005BC0A34642020609A51F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		3652E6850362466FF160BBC6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6D11102D1AEE24EC00E407AD /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		6D11102E1AEE24EC00E407AD /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
+		6D1110371AEFE76800E407AD /* user_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_placeholder@2x.png"; sourceTree = "<group>"; };
+		6D1110391AF07D0A00E407AD /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		6D1D35841AFC8EC60019DC5B /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
+		6D353BB91ADA1B040086A73D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6D353BC11ADA73810086A73D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6D353BC51ADB83AA0086A73D /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		6D353BCB1ADB8F150086A73D /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		6D353BCF1ADB900A0086A73D /* FirststepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirststepViewController.swift; sourceTree = "<group>"; };
+		6D353BD31ADB90200086A73D /* SecondstepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondstepViewController.swift; sourceTree = "<group>"; };
+		6D353BD71ADBB5ED0086A73D /* TextFieldEffects */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TextFieldEffects; path = ../TextFieldEffects; sourceTree = "<group>"; };
+		6D473A3B1AE627A7006C68FF /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Dococo/Crashlytics.framework; sourceTree = "<group>"; };
+		6D48E19A1AD8DEA100884C3A /* Dococo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dococo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D48E19E1AD8DEA100884C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D48E19F1AD8DEA100884C3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6D48E1A11AD8DEA100884C3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D48E1A41AD8DEA100884C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6D48E1A61AD8DEA100884C3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6D48E1A91AD8DEA100884C3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6D48E1AF1AD8DEA100884C3A /* DococoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DococoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D48E1B41AD8DEA100884C3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D48E1B51AD8DEA100884C3A /* DococoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DococoTests.swift; sourceTree = "<group>"; };
+		6D48E1BF1AD8E21D00884C3A /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		6D7630471AE48DA700430CF8 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		6D7EC4F61ADD61B200364757 /* ThirdstepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdstepViewController.swift; sourceTree = "<group>"; };
+		6D7EC4FA1ADD61D200364757 /* FourthstepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthstepViewController.swift; sourceTree = "<group>"; };
+		6D8C321B1AECA8730022E1D6 /* UserDocoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDocoCell.swift; sourceTree = "<group>"; };
+		6D8C321C1AECA8730022E1D6 /* UserDocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDocoCell.xib; sourceTree = "<group>"; };
+		6D8C32211AEE1F950022E1D6 /* TargetDocoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetDocoCell.swift; sourceTree = "<group>"; };
+		6D8C32221AEE1F950022E1D6 /* TargetDocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TargetDocoCell.xib; sourceTree = "<group>"; };
+		6D8C32251AEE1FA70022E1D6 /* UserCocoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCocoCell.swift; sourceTree = "<group>"; };
+		6D8C32261AEE1FA70022E1D6 /* UserCocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCocoCell.xib; sourceTree = "<group>"; };
+		6DD43C941AEBA124005F57E3 /* TargetCocoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetCocoCell.swift; sourceTree = "<group>"; };
+		6DD43C951AEBA124005F57E3 /* TargetCocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TargetCocoCell.xib; sourceTree = "<group>"; };
+		6DD8D95B1AE734C200C04BD9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6DD8D95D1AE7358300C04BD9 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		6DE1F99E1AD947B5002481E1 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		6DE1F9A81AD94B29002481E1 /* Dococo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Dococo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DE1F9AB1AD94B29002481E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DE1F9AC1AD94B29002481E1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		6DE1F9AD1AD94B29002481E1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		6DE1F9AF1AD94B29002481E1 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		6DE1F9B11AD94B29002481E1 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		6DE1F9B31AD94B29002481E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6DE1F9B71AD94B29002481E1 /* Dococo WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dococo WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DE1F9BD1AD94B29002481E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DE1F9BF1AD94B29002481E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		6DE1F9C11AD94B29002481E1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6DE9FB441AE0ECAA00C03464 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = SOURCE_ROOT; };
+		6DE9FB451AE0ECAA00C03464 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = SOURCE_ROOT; };
+		6DE9FB461AE0ECAA00C03464 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		6DEC57101AE267FE00A14716 /* Dococo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Dococo.entitlements; sourceTree = "<group>"; };
+		6DF093AF1AD8E38300B44899 /* man1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = man1.jpg; sourceTree = "<group>"; };
+		6DF093B01AD8E38300B44899 /* man2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = man2.jpg; sourceTree = "<group>"; };
+		6DF093B11AD8E38300B44899 /* man3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = man3.jpg; sourceTree = "<group>"; };
+		6DF093B21AD8E38300B44899 /* man4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = man4.jpg; sourceTree = "<group>"; };
+		6DF093B31AD8E38300B44899 /* man5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = man5.jpg; sourceTree = "<group>"; };
+		6DF093B41AD8E38300B44899 /* man6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = man6.jpg; sourceTree = "<group>"; };
+		6DF093B51AD8E38300B44899 /* man7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = man7.jpg; sourceTree = "<group>"; };
+		6DF093B61AD8E38300B44899 /* man8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = man8.jpg; sourceTree = "<group>"; };
+		6DF093B71AD8E38300B44899 /* man9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = man9.jpg; sourceTree = "<group>"; };
+		6DF093BA1AD8E38300B44899 /* phone_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_down.png; sourceTree = "<group>"; };
+		6DF093BB1AD8E38300B44899 /* phone_receive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_receive.png; sourceTree = "<group>"; };
+		6DF093BC1AD8E38300B44899 /* phone_send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_send.png; sourceTree = "<group>"; };
+		6DF093C11AD8E38300B44899 /* star_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star_white.png; sourceTree = "<group>"; };
+		6DF093DD1AD8E38E00B44899 /* woman1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woman1.jpg; sourceTree = "<group>"; };
+		6DF093DE1AD8E38E00B44899 /* woman2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woman2.jpg; sourceTree = "<group>"; };
+		6DF093DF1AD8E38E00B44899 /* woman3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woman3.jpg; sourceTree = "<group>"; };
+		6DF093E01AD8E38E00B44899 /* woman4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woman4.jpg; sourceTree = "<group>"; };
+		6DF093E11AD8E38E00B44899 /* woman5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woman5.jpg; sourceTree = "<group>"; };
+		6DF093EF1AD8EE4600B44899 /* OthersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OthersViewController.swift; sourceTree = "<group>"; };
+		6DF094071AD931EA00B44899 /* Dococo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dococo-Bridging-Header.h"; sourceTree = "<group>"; };
+		9750782130314F72761D1193 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D48E1971AD8DEA100884C3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DE1F99F1AD947B5002481E1 /* ParseUI.framework in Frameworks */,
+				6D473A3C1AE627A7006C68FF /* Crashlytics.framework in Frameworks */,
+				6DE9FB491AE0ECAA00C03464 /* Fabric.framework in Frameworks */,
+				16E50D44922633316199CAA4 /* Pods.framework in Frameworks */,
+				6DE9FB471AE0ECAA00C03464 /* TwitterKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D48E1AC1AD8DEA100884C3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DE1F9A51AD94B29002481E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		163FBDDB9579312F6CD33FDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D473A3B1AE627A7006C68FF /* Crashlytics.framework */,
+				6DE9FB441AE0ECAA00C03464 /* TwitterKit.framework */,
+				6DE9FB451AE0ECAA00C03464 /* TwitterKitResources.bundle */,
+				6DE9FB461AE0ECAA00C03464 /* Fabric.framework */,
+				6DE1F99E1AD947B5002481E1 /* ParseUI.framework */,
+				9750782130314F72761D1193 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C8554ACBC35CD4E50FD702D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3652E6850362466FF160BBC6 /* Pods.debug.xcconfig */,
+				33005BC0A34642020609A51F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		6D353BC91ADB864A0086A73D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D1110391AF07D0A00E407AD /* FriendsTableViewController.swift */,
+				6D353BC11ADA73810086A73D /* DetailViewController.swift */,
+				6DF093EF1AD8EE4600B44899 /* OthersViewController.swift */,
+				6DD8D95D1AE7358300C04BD9 /* SettingViewController.swift */,
+				6DD8D95B1AE734C200C04BD9 /* ProfileViewController.swift */,
+				6D353BC51ADB83AA0086A73D /* TimelineViewController.swift */,
+				6D7630471AE48DA700430CF8 /* AddFriendViewController.swift */,
+				6D1D35841AFC8EC60019DC5B /* noimage.jpg */,
+				6D7EC5011ADD620200364757 /* LoginSignup */,
+				6D7EC5001ADD61EB00364757 /* stepViewController */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		6D353BCA1ADB86820086A73D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6DD43C941AEBA124005F57E3 /* TargetCocoCell.swift */,
+				6DD43C951AEBA124005F57E3 /* TargetCocoCell.xib */,
+				6D8C32211AEE1F950022E1D6 /* TargetDocoCell.swift */,
+				6D8C32221AEE1F950022E1D6 /* TargetDocoCell.xib */,
+				6D8C32251AEE1FA70022E1D6 /* UserCocoCell.swift */,
+				6D8C32261AEE1FA70022E1D6 /* UserCocoCell.xib */,
+				6D8C321B1AECA8730022E1D6 /* UserDocoCell.swift */,
+				6D8C321C1AECA8730022E1D6 /* UserDocoCell.xib */,
+				6D11102D1AEE24EC00E407AD /* FriendsTableViewCell.swift */,
+				6D11102E1AEE24EC00E407AD /* FriendsTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		6D48E1911AD8DEA100884C3A = {
+			isa = PBXGroup;
+			children = (
+				6D48E19C1AD8DEA100884C3A /* Dococo */,
+				6D48E1B21AD8DEA100884C3A /* DococoTests */,
+				6DE1F9A91AD94B29002481E1 /* Dococo WatchKit Extension */,
+				6DE1F9BB1AD94B29002481E1 /* Dococo WatchKit App */,
+				6D48E19B1AD8DEA100884C3A /* Products */,
+				5C8554ACBC35CD4E50FD702D /* Pods */,
+				163FBDDB9579312F6CD33FDE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6D48E19B1AD8DEA100884C3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D48E19A1AD8DEA100884C3A /* Dococo.app */,
+				6D48E1AF1AD8DEA100884C3A /* DococoTests.xctest */,
+				6DE1F9A81AD94B29002481E1 /* Dococo WatchKit Extension.appex */,
+				6DE1F9B71AD94B29002481E1 /* Dococo WatchKit App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D48E19C1AD8DEA100884C3A /* Dococo */ = {
+			isa = PBXGroup;
+			children = (
+				6D48E19F1AD8DEA100884C3A /* AppDelegate.swift */,
+				6D48E1A11AD8DEA100884C3A /* ViewController.swift */,
+				6D48E1A31AD8DEA100884C3A /* Main.storyboard */,
+				6D48E1A61AD8DEA100884C3A /* Images.xcassets */,
+				6D353BD71ADBB5ED0086A73D /* TextFieldEffects */,
+				6D353BC91ADB864A0086A73D /* ViewController */,
+				6D353BCA1ADB86820086A73D /* Cell */,
+				6D48E1A81AD8DEA100884C3A /* LaunchScreen.xib */,
+				6DF094071AD931EA00B44899 /* Dococo-Bridging-Header.h */,
+				6D48E19D1AD8DEA100884C3A /* Supporting Files */,
+			);
+			path = Dococo;
+			sourceTree = "<group>";
+		};
+		6D48E19D1AD8DEA100884C3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D1110371AEFE76800E407AD /* user_placeholder@2x.png */,
+				6DF093C11AD8E38300B44899 /* star_white.png */,
+				6DF093BA1AD8E38300B44899 /* phone_down.png */,
+				6DF093BB1AD8E38300B44899 /* phone_receive.png */,
+				6DF093BC1AD8E38300B44899 /* phone_send.png */,
+				6D48E1BF1AD8E21D00884C3A /* close.png */,
+				6DF093AF1AD8E38300B44899 /* man1.jpg */,
+				6DF093B01AD8E38300B44899 /* man2.jpg */,
+				6DF093B11AD8E38300B44899 /* man3.jpg */,
+				6DF093B21AD8E38300B44899 /* man4.jpg */,
+				6DF093B31AD8E38300B44899 /* man5.jpg */,
+				6DF093B41AD8E38300B44899 /* man6.jpg */,
+				6DF093B51AD8E38300B44899 /* man7.jpg */,
+				6DF093B61AD8E38300B44899 /* man8.jpg */,
+				6DF093B71AD8E38300B44899 /* man9.jpg */,
+				6DF093DD1AD8E38E00B44899 /* woman1.jpg */,
+				6DF093DE1AD8E38E00B44899 /* woman2.jpg */,
+				6DF093DF1AD8E38E00B44899 /* woman3.jpg */,
+				6DF093E01AD8E38E00B44899 /* woman4.jpg */,
+				6DF093E11AD8E38E00B44899 /* woman5.jpg */,
+				6DEC57101AE267FE00A14716 /* Dococo.entitlements */,
+				6D48E19E1AD8DEA100884C3A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D48E1B21AD8DEA100884C3A /* DococoTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D48E1B51AD8DEA100884C3A /* DococoTests.swift */,
+				6D48E1B31AD8DEA100884C3A /* Supporting Files */,
+			);
+			path = DococoTests;
+			sourceTree = "<group>";
+		};
+		6D48E1B31AD8DEA100884C3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D48E1B41AD8DEA100884C3A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D7EC5001ADD61EB00364757 /* stepViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D353BCF1ADB900A0086A73D /* FirststepViewController.swift */,
+				6D353BD31ADB90200086A73D /* SecondstepViewController.swift */,
+				6D7EC4F61ADD61B200364757 /* ThirdstepViewController.swift */,
+				6D7EC4FA1ADD61D200364757 /* FourthstepViewController.swift */,
+			);
+			name = stepViewController;
+			sourceTree = "<group>";
+		};
+		6D7EC5011ADD620200364757 /* LoginSignup */ = {
+			isa = PBXGroup;
+			children = (
+				6D353BB91ADA1B040086A73D /* LoginViewController.swift */,
+				6D353BCB1ADB8F150086A73D /* SignupViewController.swift */,
+			);
+			name = LoginSignup;
+			sourceTree = "<group>";
+		};
+		6DE1F9A91AD94B29002481E1 /* Dococo WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6DE1F9AD1AD94B29002481E1 /* InterfaceController.swift */,
+				6DE1F9AF1AD94B29002481E1 /* NotificationController.swift */,
+				6DE1F9B11AD94B29002481E1 /* GlanceController.swift */,
+				6DE1F9B31AD94B29002481E1 /* Images.xcassets */,
+				6DE1F9AA1AD94B29002481E1 /* Supporting Files */,
+			);
+			path = "Dococo WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		6DE1F9AA1AD94B29002481E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6DE1F9AB1AD94B29002481E1 /* Info.plist */,
+				6DE1F9AC1AD94B29002481E1 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6DE1F9BB1AD94B29002481E1 /* Dococo WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				6DE1F9BE1AD94B29002481E1 /* Interface.storyboard */,
+				6DE1F9C11AD94B29002481E1 /* Images.xcassets */,
+				6DE1F9BC1AD94B29002481E1 /* Supporting Files */,
+			);
+			path = "Dococo WatchKit App";
+			sourceTree = "<group>";
+		};
+		6DE1F9BC1AD94B29002481E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6DE1F9BD1AD94B29002481E1 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D48E1991AD8DEA100884C3A /* Dococo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D48E1B91AD8DEA100884C3A /* Build configuration list for PBXNativeTarget "Dococo" */;
+			buildPhases = (
+				DCB7A56D7F7E17EDB3A62035 /* Check Pods Manifest.lock */,
+				6D48E1961AD8DEA100884C3A /* Sources */,
+				6D48E1971AD8DEA100884C3A /* Frameworks */,
+				6D48E1981AD8DEA100884C3A /* Resources */,
+				F39A7EF03DDDE04FBF15176F /* Embed Pods Frameworks */,
+				E279CD10B8871B63F68B2D0A /* Copy Pods Resources */,
+				6DE1F9CC1AD94B29002481E1 /* Embed App Extensions */,
+				6DE9FB431AE0EC1100C03464 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6DE1F9C41AD94B29002481E1 /* PBXTargetDependency */,
+			);
+			name = Dococo;
+			productName = Dococo;
+			productReference = 6D48E19A1AD8DEA100884C3A /* Dococo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6D48E1AE1AD8DEA100884C3A /* DococoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D48E1BC1AD8DEA100884C3A /* Build configuration list for PBXNativeTarget "DococoTests" */;
+			buildPhases = (
+				6D48E1AB1AD8DEA100884C3A /* Sources */,
+				6D48E1AC1AD8DEA100884C3A /* Frameworks */,
+				6D48E1AD1AD8DEA100884C3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D48E1B11AD8DEA100884C3A /* PBXTargetDependency */,
+			);
+			name = DococoTests;
+			productName = DococoTests;
+			productReference = 6D48E1AF1AD8DEA100884C3A /* DococoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6DE1F9A71AD94B29002481E1 /* Dococo WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DE1F9C91AD94B29002481E1 /* Build configuration list for PBXNativeTarget "Dococo WatchKit Extension" */;
+			buildPhases = (
+				6DE1F9A41AD94B29002481E1 /* Sources */,
+				6DE1F9A51AD94B29002481E1 /* Frameworks */,
+				6DE1F9A61AD94B29002481E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6DE1F9BA1AD94B29002481E1 /* PBXTargetDependency */,
+			);
+			name = "Dococo WatchKit Extension";
+			productName = "Dococo WatchKit Extension";
+			productReference = 6DE1F9A81AD94B29002481E1 /* Dococo WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		6DE1F9B61AD94B29002481E1 /* Dococo WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6DE1F9C61AD94B29002481E1 /* Build configuration list for PBXNativeTarget "Dococo WatchKit App" */;
+			buildPhases = (
+				6DE1F9B51AD94B29002481E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dococo WatchKit App";
+			productName = "Dococo WatchKit App";
+			productReference = 6DE1F9B71AD94B29002481E1 /* Dococo WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D48E1921AD8DEA100884C3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Makoto Mori";
+				TargetAttributes = {
+					6D48E1991AD8DEA100884C3A = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 8675N83432;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					6D48E1AE1AD8DEA100884C3A = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 6D48E1991AD8DEA100884C3A;
+					};
+					6DE1F9A71AD94B29002481E1 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 8675N83432;
+					};
+					6DE1F9B61AD94B29002481E1 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 8675N83432;
+					};
+				};
+			};
+			buildConfigurationList = 6D48E1951AD8DEA100884C3A /* Build configuration list for PBXProject "Dococo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D48E1911AD8DEA100884C3A;
+			productRefGroup = 6D48E19B1AD8DEA100884C3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D48E1991AD8DEA100884C3A /* Dococo */,
+				6D48E1AE1AD8DEA100884C3A /* DococoTests */,
+				6DE1F9A71AD94B29002481E1 /* Dococo WatchKit Extension */,
+				6DE1F9B61AD94B29002481E1 /* Dococo WatchKit App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D48E1981AD8DEA100884C3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DF093C71AD8E38300B44899 /* man2.jpg in Resources */,
+				6DF093D11AD8E38300B44899 /* phone_down.png in Resources */,
+				6DF093E31AD8E38E00B44899 /* woman2.jpg in Resources */,
+				6D48E1A51AD8DEA100884C3A /* Main.storyboard in Resources */,
+				6D48E1AA1AD8DEA100884C3A /* LaunchScreen.xib in Resources */,
+				6D8C32241AEE1F950022E1D6 /* TargetDocoCell.xib in Resources */,
+				6DF093C91AD8E38300B44899 /* man4.jpg in Resources */,
+				6D48E1C21AD8E21D00884C3A /* close.png in Resources */,
+				6DF093CA1AD8E38300B44899 /* man5.jpg in Resources */,
+				6DE9FB481AE0ECAA00C03464 /* TwitterKitResources.bundle in Resources */,
+				6DF093D81AD8E38300B44899 /* star_white.png in Resources */,
+				6DF093C61AD8E38300B44899 /* man1.jpg in Resources */,
+				6DF093E21AD8E38E00B44899 /* woman1.jpg in Resources */,
+				6DF093CE1AD8E38300B44899 /* man9.jpg in Resources */,
+				6DD43C971AEBA124005F57E3 /* TargetCocoCell.xib in Resources */,
+				6D353BD81ADBB5ED0086A73D /* TextFieldEffects in Resources */,
+				6D8C32281AEE1FA70022E1D6 /* UserCocoCell.xib in Resources */,
+				6D8C321E1AECA8730022E1D6 /* UserDocoCell.xib in Resources */,
+				6DF093C81AD8E38300B44899 /* man3.jpg in Resources */,
+				6DF093E51AD8E38E00B44899 /* woman4.jpg in Resources */,
+				6D48E1A71AD8DEA100884C3A /* Images.xcassets in Resources */,
+				6DF093E61AD8E38E00B44899 /* woman5.jpg in Resources */,
+				6DF093CD1AD8E38300B44899 /* man8.jpg in Resources */,
+				6D1110301AEE24EC00E407AD /* FriendsTableViewCell.xib in Resources */,
+				6DF093CC1AD8E38300B44899 /* man7.jpg in Resources */,
+				6D1D35851AFC8EC60019DC5B /* noimage.jpg in Resources */,
+				6D1110381AEFE76800E407AD /* user_placeholder@2x.png in Resources */,
+				6DF093CB1AD8E38300B44899 /* man6.jpg in Resources */,
+				6DF093D31AD8E38300B44899 /* phone_send.png in Resources */,
+				6DF093E41AD8E38E00B44899 /* woman3.jpg in Resources */,
+				6DF093D21AD8E38300B44899 /* phone_receive.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D48E1AD1AD8DEA100884C3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DE1F9A61AD94B29002481E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DE1F9B41AD94B29002481E1 /* Images.xcassets in Resources */,
+				6DE1F9B81AD94B29002481E1 /* Dococo WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DE1F9B51AD94B29002481E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DE1F9C01AD94B29002481E1 /* Interface.storyboard in Resources */,
+				6DE1F9C21AD94B29002481E1 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6DE9FB431AE0EC1100C03464 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 33598c7021d140944f708791d614a41b732cc04f 7dd45fef44be0da9dc903d53ec6326f1eb13bc169354f368b4995e8655ce58c9";
+		};
+		DCB7A56D7F7E17EDB3A62035 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E279CD10B8871B63F68B2D0A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F39A7EF03DDDE04FBF15176F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D48E1961AD8DEA100884C3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D8C32271AEE1FA70022E1D6 /* UserCocoCell.swift in Sources */,
+				6D7EC4FC1ADD61D200364757 /* FourthstepViewController.swift in Sources */,
+				6D353BC71ADB83AA0086A73D /* TimelineViewController.swift in Sources */,
+				6D8C32231AEE1F950022E1D6 /* TargetDocoCell.swift in Sources */,
+				6D353BCD1ADB8F150086A73D /* SignupViewController.swift in Sources */,
+				6D353BD51ADB90200086A73D /* SecondstepViewController.swift in Sources */,
+				6DD8D95E1AE7358300C04BD9 /* SettingViewController.swift in Sources */,
+				6D353BC31ADA73810086A73D /* DetailViewController.swift in Sources */,
+				6D48E1A21AD8DEA100884C3A /* ViewController.swift in Sources */,
+				6DD8D95C1AE734C200C04BD9 /* ProfileViewController.swift in Sources */,
+				6DF093F11AD8EE4600B44899 /* OthersViewController.swift in Sources */,
+				6D7630481AE48DA700430CF8 /* AddFriendViewController.swift in Sources */,
+				6D8C321D1AECA8730022E1D6 /* UserDocoCell.swift in Sources */,
+				6D48E1A01AD8DEA100884C3A /* AppDelegate.swift in Sources */,
+				6D11103A1AF07D0A00E407AD /* FriendsTableViewController.swift in Sources */,
+				6D7EC4F81ADD61B200364757 /* ThirdstepViewController.swift in Sources */,
+				6D353BBB1ADA1B040086A73D /* LoginViewController.swift in Sources */,
+				6D11102F1AEE24EC00E407AD /* FriendsTableViewCell.swift in Sources */,
+				6DD43C961AEBA124005F57E3 /* TargetCocoCell.swift in Sources */,
+				6D353BD11ADB900A0086A73D /* FirststepViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D48E1AB1AD8DEA100884C3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D48E1B61AD8DEA100884C3A /* DococoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6DE1F9A41AD94B29002481E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6DE1F9B01AD94B29002481E1 /* NotificationController.swift in Sources */,
+				6DE1F9AE1AD94B29002481E1 /* InterfaceController.swift in Sources */,
+				6DE1F9B21AD94B29002481E1 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D48E1B11AD8DEA100884C3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D48E1991AD8DEA100884C3A /* Dococo */;
+			targetProxy = 6D48E1B01AD8DEA100884C3A /* PBXContainerItemProxy */;
+		};
+		6DE1F9BA1AD94B29002481E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DE1F9B61AD94B29002481E1 /* Dococo WatchKit App */;
+			targetProxy = 6DE1F9B91AD94B29002481E1 /* PBXContainerItemProxy */;
+		};
+		6DE1F9C41AD94B29002481E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6DE1F9A71AD94B29002481E1 /* Dococo WatchKit Extension */;
+			targetProxy = 6DE1F9C31AD94B29002481E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6D48E1A31AD8DEA100884C3A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D48E1A41AD8DEA100884C3A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6D48E1A81AD8DEA100884C3A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D48E1A91AD8DEA100884C3A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		6DE1F9BE1AD94B29002481E1 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DE1F9BF1AD94B29002481E1 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6D48E1B71AD8DEA100884C3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6D48E1B81AD8DEA100884C3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6D48E1BA1AD8DEA100884C3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3652E6850362466FF160BBC6 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Dococo/Dococo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Dococo",
+				);
+				INFOPLIST_FILE = Dococo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dococo/Dococo-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		6D48E1BB1AD8DEA100884C3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33005BC0A34642020609A51F /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Dococo/Dococo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Dococo",
+				);
+				INFOPLIST_FILE = Dococo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dococo/Dococo-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		6D48E1BD1AD8DEA100884C3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DococoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dococo.app/Dococo";
+			};
+			name = Debug;
+		};
+		6D48E1BE1AD8DEA100884C3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DococoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dococo.app/Dococo";
+			};
+			name = Release;
+		};
+		6DE1F9C71AD94B29002481E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Dococo_WatchKit_Extension;
+				INFOPLIST_FILE = "Dococo WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		6DE1F9C81AD94B29002481E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				IBSC_MODULE = Dococo_WatchKit_Extension;
+				INFOPLIST_FILE = "Dococo WatchKit App/Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		6DE1F9CA1AD94B29002481E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Dococo WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6DE1F9CB1AD94B29002481E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Dococo WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D48E1951AD8DEA100884C3A /* Build configuration list for PBXProject "Dococo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D48E1B71AD8DEA100884C3A /* Debug */,
+				6D48E1B81AD8DEA100884C3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D48E1B91AD8DEA100884C3A /* Build configuration list for PBXNativeTarget "Dococo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D48E1BA1AD8DEA100884C3A /* Debug */,
+				6D48E1BB1AD8DEA100884C3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D48E1BC1AD8DEA100884C3A /* Build configuration list for PBXNativeTarget "DococoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D48E1BD1AD8DEA100884C3A /* Debug */,
+				6D48E1BE1AD8DEA100884C3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DE1F9C61AD94B29002481E1 /* Build configuration list for PBXNativeTarget "Dococo WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DE1F9C71AD94B29002481E1 /* Debug */,
+				6DE1F9C81AD94B29002481E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6DE1F9C91AD94B29002481E1 /* Build configuration list for PBXNativeTarget "Dococo WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DE1F9CA1AD94B29002481E1 /* Debug */,
+				6DE1F9CB1AD94B29002481E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D48E1921AD8DEA100884C3A /* Project object */;
+}
