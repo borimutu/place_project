@@ -20,6 +20,7 @@ class AddFriendViewController: UIViewController,UISearchBarDelegate {
     var addfriendButton : HTPressableButton?
     var addedFriend : PFUser?
     var friendsArray : [PFUser]? = []
+    var id : AnyObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class AddFriendViewController: UIViewController,UISearchBarDelegate {
         searchBar = UISearchBar(frame: CGRectMake(0, 0, self.view.frame.width, 40))
         searchBar?.delegate = self
         searchBar?.placeholder = "Dococo ID"
+        searchBar?.autocorrectionType = UITextAutocorrectionType.No
+        searchBar?.autocapitalizationType = UITextAutocapitalizationType.None
         self.view.addSubview(searchBar!)
         
         recognizer = UITapGestureRecognizer(target: self, action: "viewTapped:")
@@ -50,7 +53,7 @@ class AddFriendViewController: UIViewController,UISearchBarDelegate {
         addfriendButton?.addTarget(self, action: "addfriendButtonTapped:", forControlEvents: UIControlEvents.TouchUpInside)
         
         let idLabel = UILabel(frame: CGRectMake(0, self.searchBar!.center.y+40.0, self.view.frame.width, 40.0))
-        let id: AnyObject! = PFUser.currentUser().objectForKey("keyword")
+        id = PFUser.currentUser().objectForKey("keyword")
         idLabel.textAlignment = NSTextAlignment.Center
         idLabel.text = "自分のID : \(id)"
         self.view.addSubview(idLabel)
@@ -63,6 +66,17 @@ class AddFriendViewController: UIViewController,UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        let searchText = searchBar.text
+        var idsList :[String]! = []
+        let friendsList: [PFUser]! = PFUser.currentUser().objectForKey("friends") as [PFUser]
+        for friend in friendsList{
+            idsList.append(friend.objectForKey("keyword") as String)
+        }
+        if searchText == id as String{
+            SCLAlertView().showError("エラー", subTitle: "自分のIDが入力されました", closeButtonTitle: "OK", duration: 5.0)
+        }else if contains(idsList, searchText){
+            SCLAlertView().showError("エラー", subTitle: "すでに友達になっています", closeButtonTitle: "OK", duration: 5.0)
+        }else{
         println("search button clicked")
         self.userimageView?.image = nil
         let keyword : NSString! = searchBar.text
@@ -84,6 +98,7 @@ class AddFriendViewController: UIViewController,UISearchBarDelegate {
                 })
             }else{
                 println("There is no user using this keyword")
+            }
             }
         }
     }

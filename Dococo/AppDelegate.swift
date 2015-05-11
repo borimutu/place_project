@@ -13,7 +13,6 @@ import Fabric
 import TwitterKit
 import Crashlytics
 
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -24,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var friends :[String!] = []
     var isFromSignup :Bool!
     var isFromLogin :Bool!
+    var removableUser : PFUser?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // MARK: - Navigationbarの外見の変更
@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        //MARK; - プッシュ通知の初期設定
         if application.respondsToSelector("registerUserNotificationSettings:") {
             let userNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
             let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
@@ -74,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Parse.enableDataSharingWithApplicationGroupIdentifier("group.com.gmail-makomori26.Dococo")
         Parse.setApplicationId("CxgnixQpggcDzru2zM25yuNWyjW1AMkOEKSas1Xc",
             clientKey: "8iBRW7W14PXhCjcvxzalv4J4g02xqwjgaGtmoq3C")
+        PFUser.enableRevocableSessionInBackground()
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         //PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         return true
@@ -93,9 +95,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
     }
-
-
     
+    //MARK: - Push通知のためのデバイス登録
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)

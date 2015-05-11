@@ -253,7 +253,6 @@
 				6DD8D95B1AE734C200C04BD9 /* ProfileViewController.swift */,
 				6D353BC51ADB83AA0086A73D /* TimelineViewController.swift */,
 				6D7630471AE48DA700430CF8 /* AddFriendViewController.swift */,
-				6D1D35841AFC8EC60019DC5B /* noimage.jpg */,
 				6D7EC5011ADD620200364757 /* LoginSignup */,
 				6D7EC5001ADD61EB00364757 /* stepViewController */,
 			);
@@ -321,6 +320,7 @@
 		6D48E19D1AD8DEA100884C3A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6D1D35841AFC8EC60019DC5B /* noimage.jpg */,
 				6D1110371AEFE76800E407AD /* user_placeholder@2x.png */,
 				6DF093C11AD8E38300B44899 /* star_white.png */,
 				6DF093BA1AD8E38300B44899 /* phone_down.png */,

@@ -173,6 +173,7 @@ class ThirdstepViewController: UIImagePickerController,UIImagePickerControllerDe
         alertController.addAction(cancelAction)
         presentViewController(alertController, animated: true, completion: nil)
     }
+    
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         self.profileImageView?.image = image
         println("finished picking image")

@@ -138,7 +138,6 @@ class FirststepViewController: UIViewController {
                     println("新規登録成功")
                     self.errorLabel?.text = ""
                     self.messageLabel?.text = "おめでとうございます"
-                    var verified: Bool? = PFUser.currentUser().objectForKey("emailVerified") as? Bool
                     self.stepsController.showNextStep()
                 }else{
                     //MARK: - エラー内容によってerrorLabelの文言を変える

@@ -23,10 +23,10 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
     var mapView: GMSMapView?
     var sentDates : [String] = []
     var posts : [PFObject] = []
-    //Cocoだけを入れた配列。selectedMarkerを変更するため
     var cocoPosts : [PFObject] = []
     var markers : [GMSMarker] = []
     var activityIndicator: UIActivityIndicatorView!
+    var refreshActivityIndicator: UIActivityIndicatorView!
     var refreshControl:UIRefreshControl!
     var lastUpdate : NSDate?
     var formatter :NSDateFormatter = NSDateFormatter()
@@ -34,11 +34,15 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
     var currentUserImage : UIImage?
     var targetUserImage : UIImage?
     var refreshButton :UIButton?
-    //指定されたインデックスがCocoであるかどうかを返す配列
     var isCocoIndex :[Bool] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // MARK: - ナビゲーションバーのrightButtonItemに削除ボタンを設置
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "削除", style: UIBarButtonItemStyle.Plain, target: self, action: "deleteFriend:")
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.redColor()
+        
         // MARK: - Appdelegateから共有変数を取得
         var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         targetUser = appDelegate.targetUser
@@ -164,9 +168,6 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                         push.setChannel(self.targetUser?.objectId)
                         var name :NSString! = PFUser.currentUser().objectForKey("name") as NSString
                         push.setMessage("\(name)からCocoが届きました")
-                        var data = [ "title": "Some Title",
-                            "alert": "message"]
-                        push.setData(data)
                         push.sendPushInBackgroundWithBlock({ (succeeded :Bool!, error :NSError!) -> Void in
                             if (error==nil){
                                 println("プッシュ通知成功")
@@ -295,143 +296,6 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                 println("エラー")
             }
         }
-        /*
-        query.whereKey("to", equalTo: toUser)
-        query.whereKey("from", equalTo: PFUser.currentUser())
-        query.limit = 10
-        query.orderByDescending("createdAt")
-        query.findObjectsInBackgroundWithBlock { (objects :[AnyObject]!, error :NSError!) -> Void in
-            if error == nil{
-                for object :PFObject in objects as [PFObject]!{
-                    println("createdAt:\(object.createdAt)")
-                    let formatter :NSDateFormatter = NSDateFormatter()
-                    formatter.dateStyle = .MediumStyle
-                    formatter.timeStyle = .MediumStyle
-                    self.sentDates.append(formatter.stringFromDate(object.createdAt))
-                    var pointObject :PFGeoPoint! = object.objectForKey("point") as PFGeoPoint
-                    var point :CLLocationCoordinate2D? = CLLocationCoordinate2DMake(pointObject.latitude, pointObject.longitude)
-                    CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: point!.latitude, longitude: point!.longitude
-                        ), completionHandler: { (placemarks :[AnyObject]!, error :NSError!) -> Void in
-                            if (error == nil && placemarks.count > 0) {
-                                let placemark = placemarks[0] as CLPlacemark
-                                let address = "\(placemark.administrativeArea)\(placemark.locality)\(placemark.subLocality)付近"
-                                self.addresses.append(address)
-                                if objects.count == self.addresses.count{
-                                    self.tableView!.reloadData()
-                                    self.activityIndicator.stopAnimating()
-                                }
-                            }
-                    })
-                }
-            }
-        }
-                /* var i :Int = 0
-                for object in objects! {
-                var pointObject :PFGeoPoint! = object.objectForKey("point") as PFGeoPoint
-                var point :CLLocationCoordinate2D? = CLLocationCoordinate2DMake(pointObject.latitude, pointObject.longitude)
-                    //ポイントから地名を出す
-                    CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: point!.latitude, longitude: point!.longitude
-                        ), completionHandler: { (placemarks :[AnyObject]!, error :NSError!) -> Void in
-                            if (error == nil && placemarks.count > 0) {
-                                let placemark = placemarks[0] as CLPlacemark
-                                println("Country = \(placemark.country)")
-                                println("Postal Code = \(placemark.postalCode)")
-                                println("Administrative Area = \(placemark.administrativeArea)")
-                                println("Sub Administrative Area = \(placemark.subAdministrativeArea)")
-                                println("Locality = \(placemark.locality)")
-                                println("Sub Locality = \(placemark.subLocality)")
-                                println("Throughfare = \(placemark.thoroughfare)")
-                                let address = "\(placemark.administrativeArea)\(placemark.locality)\(placemark.subLocality)付近"
-                                println(address)
-                                
-                                //self.addresses.append(address)
-                                var marker:GMSMarker? = GMSMarker()
-                                marker?.position = point!
-                                let formatter :NSDateFormatter = NSDateFormatter()
-                                formatter.dateStyle = .MediumStyle
-                                formatter.timeStyle = .MediumStyle
-                                marker?.snippet = formatter.stringFromDate(object.createdAt)
-                                //self.sentDates.append(marker!.snippet!)
-                                println("snnipet:\(marker!.snippet)")
-                                marker?.appearAnimation = kGMSMarkerAnimationPop
-                                marker?.map = self.mapView
-                                self.markers.append(marker!)
-                                i++
-                                if i == objects.count {
-                                    println("sentDates:\(self.sentDates)")
-                                    println("addresses:\(self.addresses)")
-                                    self.tableView.reloadData()
-                                    self.activityIndicator.stopAnimating()
-                                    self.refreshControl!.endRefreshing()
-                                }
-                                
-                            } else if (error == nil && placemarks.count == 0) {
-                                println("No results were returned.")
-                                self.refreshControl!.endRefreshing()
-                            } else if (error != nil) {
-                                println("An error occured = \(error.localizedDescription)")
-                                self.refreshControl!.endRefreshing()
-                            }
-                    })
-                }*/
-        /* var anotherQuery = PFQuery(className: "Coco")
-        anotherQuery.whereKey("to", equalTo: PFUser.currentUser())
-        anotherQuery.whereKey("from", equalTo: toUser)
-        anotherQuery.limit = 10
-        anotherQuery.orderByDescending("createdAt")
-        anotherQuery.findObjectsInBackgroundWithBlock { (objects :[AnyObject]!, error :NSError!) -> Void in
-            if error == nil{
-                println("入った")
-                var i :Int = 0
-                for object in objects! {
-                    println(object)
-                    var pointObject :PFGeoPoint! = object.objectForKey("point") as PFGeoPoint
-                    var point :CLLocationCoordinate2D? = CLLocationCoordinate2DMake(pointObject.latitude, pointObject.longitude)
-                    //ポイントから地名を出す
-                    CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: point!.latitude, longitude: point!.longitude
-                        ), completionHandler: { (placemarks :[AnyObject]!, error :NSError!) -> Void in
-                            if (error == nil && placemarks.count > 0) {
-                                let placemark = placemarks[0] as CLPlacemark
-                                println("Country = \(placemark.country)")
-                                println("Postal Code = \(placemark.postalCode)")
-                                println("Administrative Area = \(placemark.administrativeArea)")
-                                println("Sub Administrative Area = \(placemark.subAdministrativeArea)")
-                                println("Locality = \(placemark.locality)")
-                                println("Sub Locality = \(placemark.subLocality)")
-                                println("Throughfare = \(placemark.thoroughfare)")
-                                println("Throughfare = \(placemark.thoroughfare)")
-                                let address = "\(placemark.administrativeArea)\(placemark.locality)\(placemark.subLocality)付近)"
-                                println(address)
-                                self.addresses.append(address)
-                                var marker:GMSMarker? = GMSMarker()
-                                marker?.position = point!
-                                let formatter :NSDateFormatter = NSDateFormatter()
-                                formatter.dateStyle = .MediumStyle
-                                formatter.timeStyle = .MediumStyle
-                                marker?.snippet = formatter.stringFromDate(object.createdAt)
-                                self.sentDates.append(marker!.snippet!)
-                                println("snnipet:\(marker!.snippet)")
-                                marker?.appearAnimation = kGMSMarkerAnimationPop
-                                marker?.map = self.mapView
-                                self.markers.append(marker!)
-                                i++
-                                if i == objects.count {
-                                    println("sentDates:\(self.sentDates)")
-                                    println("addresses:\(self.addresses)")
-                                    self.tableView.reloadData()
-                                    self.activityIndicator.stopAnimating()
-                                }
-                            } else if (error == nil && placemarks.count == 0) {
-                                println("No results were returned.")
-                            } else if (error != nil) {
-                                println("An error occured = \(error.localizedDescription)")
-                            }
-                    })
-                }
-            }else{
-                println("an error occured")
-            }
-        }*/*/
     }
     
     //MARK: - markerのMapViewへの設置
@@ -449,6 +313,10 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
     //MARK: - 再読込
     func refresh() {
         println("リフレッシュ!")
+        self.refreshActivityIndicator = UIActivityIndicatorView(frame: CGRectMake((self.refreshButton!.frame.width-self.refreshButton!.frame.height)/2, 0, self.refreshButton!.frame.height, self.refreshButton!.frame.height))
+        self.refreshButton?.addSubview(refreshActivityIndicator)
+        self.refreshActivityIndicator.startAnimating()
+        
         if refreshControl.refreshing == false{
             self.refreshControl.beginRefreshing()
         }
@@ -505,6 +373,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                             self.tableView.reloadData()
                             self.activityIndicator.stopAnimating()
                             self.refreshControl!.endRefreshing()
+                            self.refreshActivityIndicator.stopAnimating()
                         }
                         //MARK: - isCocoIndexへの値の追加
                         for post:PFObject in self.posts as [PFObject]{
@@ -573,14 +442,25 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
         //TODO: この時点でposts配列に最新の値が入っていないから間違った値が挿入される
         println(indexPath.row)
         var post = posts[indexPath.row]
-        println("追加されるデータの数\(posts.count)")
         var className = post.parseClassName
         var fromUser = post.objectForKey("from") as PFUser
-        var point = post.objectForKey("point") as PFGeoPoint
         
         if className == "Coco" && fromUser == PFUser.currentUser(){
             //ユーザーからターゲットに送ったCocoのPFObject
             let cell : UserCocoCell = tableView.dequeueReusableCellWithIdentifier("UserCocoCell") as UserCocoCell
+            //MARK: - 住所の取得
+            var point = post.objectForKey("point") as PFGeoPoint
+            CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: point.latitude, longitude: point.longitude
+                ), completionHandler: { (placemarks :[AnyObject]!, error :NSError!) -> Void in
+                    if (error == nil && placemarks.count > 0) {
+                        let placemark = placemarks[0] as CLPlacemark
+                        let address = "\(placemark.administrativeArea)\(placemark.locality)\(placemark.subLocality)"
+                        cell.addressLabel.text = address
+                    }else{
+                        println("住所取得の際にエラー発生")
+                    }
+            })
+            
             cell.userImageView.image = currentUserImage
             cell.timeLabel.text = formatter.stringFromDate(post.createdAt)
             return cell
@@ -591,6 +471,17 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
         }else if className == "Coco" && fromUser == targetUser{
             //ターゲットからユーザーに送ったCocoのPFObject
             let cell : TargetCocoCell = tableView.dequeueReusableCellWithIdentifier("TargetCocoCell") as TargetCocoCell
+            var point = post.objectForKey("point") as PFGeoPoint
+            CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: point.latitude, longitude: point.longitude
+                ), completionHandler: { (placemarks :[AnyObject]!, error :NSError!) -> Void in
+                    if (error == nil && placemarks.count > 0) {
+                        let placemark = placemarks[0] as CLPlacemark
+                        let address = "\(placemark.administrativeArea)\(placemark.locality)\(placemark.subLocality)"
+                        cell.addressLabel.text = address
+                    }else{
+                        println("住所取得の際にエラー発生")
+                    }
+            })
             cell.userImageView.image = targetUserImage
             cell.timeLabel.text = formatter.stringFromDate(post.createdAt)
             return cell
@@ -620,6 +511,20 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
     }
     
     func cocoAdded(coco:PFObject){
+    }
+    
+    //MARK: - 友達を削除するメソッド
+    func deleteFriend(sender:AnyObject!){
+        var alert = SCLAlertView()
+        alert.addButton("友達から削除", target: self, selector: "deleteFriendConfirmed:")
+        alert.showWarning("確認", subTitle: "本当に友達から削除しますか?", closeButtonTitle: "キャンセル", duration: 5.0)
+    }
+    
+    func deleteFriendConfirmed(sender:AnyObject!){
+        println("友達から削除決定")
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        appDelegate.removableUser = targetUser
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }
 

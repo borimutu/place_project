@@ -38,7 +38,6 @@ class SignupViewController: RMStepsController,UIImagePickerControllerDelegate {
         controller3 = self.storyboard?.instantiateViewControllerWithIdentifier("thirdstep") as? ThirdstepViewController
         controller3?.step.title = "プロフィール作成"
         controllerArray.append(controller3!)
-
         
         controller4 = self.storyboard?.instantiateViewControllerWithIdentifier("fourthstep") as? FourthstepViewController
         controller4?.step.title = "友達追加"

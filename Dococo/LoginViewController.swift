@@ -26,7 +26,6 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     var logoView :UIImageView?
     var isFromSignup :Bool!
     var errorLabel :TOMSMorphingLabel?
-    var loginAnimationView :CSAnimationView?
     @IBOutlet var scrollView: UIScrollView!
     
     override func viewDidLoad() {
@@ -68,14 +67,6 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
         passwordField?.setPlaceholder("パスワード", floatingTitle: "パスワード")
         passwordField?.secureTextEntry = true
         self.scrollView.addSubview(passwordField!)
-        
-        loginAnimationView = CSAnimationView(frame: CGRectMake(100, 100, 100, 100))
-        loginAnimationView?.backgroundColor = UIColor.redColor()
-        //loginAnimationView!.type = CSAnimationTypeFadeInLeft
-        loginAnimationView!.duration = 0.5
-        loginAnimationView!.delay = 0
-        self.scrollView.addSubview(loginAnimationView!)
-        loginAnimationView!.startCanvasAnimation()
         
         loginButton = HTPressableButton(frame: CGRectMake(self.view.center.x-100.0, self.signupButton!.frame.origin.y-60.0, 200, 50))
         loginButton?.setTitle("ログイン", forState: UIControlState.Normal)

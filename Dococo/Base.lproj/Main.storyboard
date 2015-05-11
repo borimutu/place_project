@@ -35,7 +35,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="oaq-ck-NBV"/>
+                    <navigationItem key="navigationItem" title="Home" id="oaq-ck-NBV">
+                        <barButtonItem key="backBarButtonItem" style="plain" id="d1T-TN-EnJ"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="j8r-4c-xr7" kind="presentation" identifier="login" id="e3b-Sd-Ild"/>
                         <segue destination="dgn-TH-z4a" kind="show" identifier="addfriend" id="udS-LU-qON"/>
@@ -349,6 +351,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mwu-ye-VNr" id="FSI-O8-Ohe">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="yWd-9b-O6z" kind="show" identifier="detail" id="VVL-GN-dyU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController,UINavigationControllerDelegate {
     
     var parentNavigationController : UINavigationController?
     var friendsArray : [PFUser]? = []
@@ -20,17 +20,19 @@ class FriendsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        appDelegate.removableUser = nil
+        
         // MARK: - activityIndicatorの設置、起動
         activityIndicator = UIActivityIndicatorView(frame: CGRectMake(self.view.center.x-30.0, 100, 60, 60))
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
         activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)
         
-        // MARK: - ログインしている場合にtableviewを設置する
-        self.tableView.showsVerticalScrollIndicator = true
-        // TODO : tableviewのスタイル選択でエラーが出る
+        // MARK: - tableviewにセル登録
         tableView.registerNib(UINib(nibName: "FriendsTableViewCell", bundle: nil), forCellReuseIdentifier: "FriendsTableViewCell")
-        //self.tableView.style = UITableViewStyle.Grouped
+        
         if (PFUser.currentUser() != nil){
             println("ログイン済み")
             friendsArray = PFUser.currentUser().objectForKey("friends") as? [PFUser]
@@ -45,6 +47,7 @@ class FriendsTableViewController: UITableViewController {
         }else{
             println("ログインしていない")
         }
+        
         // MARK: - RefreshControlをTableViewに設置
         refreshControl = UIRefreshControl()
         refreshControl!.addTarget(self, action: "refreshTableView", forControlEvents: UIControlEvents.ValueChanged)
@@ -74,18 +77,20 @@ class FriendsTableViewController: UITableViewController {
             }
         }
         super.viewDidAppear(true)
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        println("viewwillappear")
+        super.viewWillAppear(true)
     }
     
     // MARK: - TableViewのデリゲートメソッド
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        println("チェック")
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         println("number of rows")
-        println(friendsArray!.count)
         return friendsArray!.count
      }
 
@@ -130,16 +135,24 @@ class FriendsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // MARK: - Appdelegateに、detailViewと共有する変数を設定
+        //TODO: 画面遷移の仕組みをnavigationcontrollerのpushからセグエに変更
         var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         appDelegate.targetUser = friendsArray![indexPath.row]
-        var destinationViewController : DetailViewController = DetailViewController()
+        /*var destinationViewController : DetailViewController = DetailViewController()
+        destinationViewController.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
+        destinationViewController.title = friendsArray![indexPath.row].objectForKey("name") as? String
         parentNavigationController!.pushViewController(destinationViewController, animated: true)
+        */
+        selectedIndex = indexPath.row
+        self.performSegueWithIdentifier("detail", sender: nil)
     }
     
     // MARK: - セグエ
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "detail"){
+            //TODO: 画面遷移の仕組みをnavigationcontrollerのpushからセグエに変更
             var vc:DetailViewController = segue.destinationViewController as DetailViewController
+            vc.title = friendsArray![selectedIndex!].objectForKey("name") as? String
         }
     }
     
@@ -157,5 +170,4 @@ class FriendsTableViewController: UITableViewController {
             print("- 日付が同じです")
         }
     }
-
 }

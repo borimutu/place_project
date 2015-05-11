@@ -10,19 +10,23 @@ import PageMenu
 import Parse
 import CoreLocation
 
-class ViewController: UIViewController, CAPSPageMenuDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, CAPSPageMenuDelegate, CLLocationManagerDelegate{
+    
     var pageMenu : CAPSPageMenu?
     var locationManager = CLLocationManager()
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        //var verified: Bool? = PFUser.currentUser().objectForKey("emailVerified") as? Bool
-        //println("メール認証が\(verified)")
+        
         // MARK: - NavigationBarの外見を設定
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 18.0/255.0, green: 150.0/255.0, blue: 225.0/255.0, alpha: 1.0)
-        let backButtonItem = UIBarButtonItem(title: "戻る", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
+        let backButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         backButtonItem.tintColor = UIColor.whiteColor()
         navigationItem.backBarButtonItem = backButtonItem
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
         // MARK: - PageMenuのコンテンツとなる3つのビューを生成
         var controllersArray : [UIViewController] = []

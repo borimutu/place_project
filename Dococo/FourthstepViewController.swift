@@ -37,6 +37,7 @@ class FourthstepViewController: UIViewController,UISearchBarDelegate {
         searchBar = UISearchBar(frame: CGRectMake(0, messageLabel!.frame.origin.y+100+20, self.view.frame.width, 40))
         searchBar?.delegate = self
         searchBar?.placeholder = "Dococo ID"
+        searchBar?.autocorrectionType = UITextAutocorrectionType.No
         searchBar?.autocapitalizationType = UITextAutocapitalizationType.None
         self.view.addSubview(searchBar!)
         
@@ -76,7 +77,10 @@ class FourthstepViewController: UIViewController,UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        println("search button clicked")
+        println(PFUser.currentUser().objectForKey("name"))
+        var userName = PFUser.currentUser().username
+        var password = PFUser.currentUser().password
+        PFUser.logInWithUsername(userName, password: password)
         self.userimageView?.image = nil
         let keyword : NSString! = searchBar.text
         var query: PFQuery = PFUser.query()

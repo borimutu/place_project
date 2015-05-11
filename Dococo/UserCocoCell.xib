@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -15,46 +15,40 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lRZ-Vl-DSR">
-                        <rect key="frame" x="8" y="6" width="50" height="51"/>
+                        <rect key="frame" x="255" y="6" width="50" height="51"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="jGu-vv-h2k"/>
+                            <constraint firstAttribute="width" constant="50" id="lvX-CA-ZK8"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uya-NI-c2O">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmb-bQ-erA">
-                        <rect key="frame" x="66" y="8" width="246" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmb-bQ-erA">
+                        <rect key="frame" x="8" y="12" width="246" height="40"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6Z-kk-GU7">
-                        <rect key="frame" x="155" y="47" width="157" height="10"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6Z-kk-GU7">
+                        <rect key="frame" x="8" y="45" width="157" height="10"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.69411766529999996" green="0.58039218189999997" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
                 <constraints>
-                    <constraint firstItem="Uya-NI-c2O" firstAttribute="top" secondItem="fta-p5-7Bh" secondAttribute="top" id="1N2-Bt-xEQ"/>
-                    <constraint firstItem="Vmb-bQ-erA" firstAttribute="trailing" secondItem="fta-p5-7Bh" secondAttribute="trailingMargin" id="3Z9-fZ-7Qq"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Vmb-bQ-erA" secondAttribute="bottom" constant="7.5" id="A7p-G6-pqI"/>
-                    <constraint firstItem="lRZ-Vl-DSR" firstAttribute="top" secondItem="fta-p5-7Bh" secondAttribute="topMargin" constant="-2" id="Dag-jd-BY6"/>
-                    <constraint firstAttribute="trailing" secondItem="Uya-NI-c2O" secondAttribute="trailing" id="J1F-tn-eWG"/>
-                    <constraint firstItem="lRZ-Vl-DSR" firstAttribute="centerY" secondItem="fta-p5-7Bh" secondAttribute="centerY" id="S2R-9K-Hf9"/>
-                    <constraint firstItem="Vmb-bQ-erA" firstAttribute="top" secondItem="fta-p5-7Bh" secondAttribute="topMargin" id="eLu-y3-IDG"/>
-                    <constraint firstItem="Vmb-bQ-erA" firstAttribute="leading" secondItem="lRZ-Vl-DSR" secondAttribute="trailing" constant="8" symbolic="YES" id="esD-5L-t3c"/>
-                    <constraint firstItem="lRZ-Vl-DSR" firstAttribute="leading" secondItem="fta-p5-7Bh" secondAttribute="leadingMargin" id="ml5-IQ-RwF"/>
-                    <constraint firstItem="Uya-NI-c2O" firstAttribute="leading" secondItem="fta-p5-7Bh" secondAttribute="leading" id="xB0-Hw-66Q"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Uya-NI-c2O" secondAttribute="bottom" constant="-8.5" id="zzx-bo-IMi"/>
+                    <constraint firstItem="Vmb-bQ-erA" firstAttribute="top" secondItem="fta-p5-7Bh" secondAttribute="topMargin" constant="4" id="5QI-HZ-9vp"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Vmb-bQ-erA" secondAttribute="bottom" constant="3.5" id="MpE-5Z-rWx"/>
+                    <constraint firstItem="u6Z-kk-GU7" firstAttribute="leading" secondItem="Vmb-bQ-erA" secondAttribute="leading" id="Nv2-dG-xXW"/>
+                    <constraint firstItem="u6Z-kk-GU7" firstAttribute="top" secondItem="fta-p5-7Bh" secondAttribute="topMargin" constant="37" id="ORG-s1-siO"/>
+                    <constraint firstItem="lRZ-Vl-DSR" firstAttribute="leading" secondItem="Vmb-bQ-erA" secondAttribute="trailing" constant="1" id="RN5-nH-jCO"/>
+                    <constraint firstItem="lRZ-Vl-DSR" firstAttribute="leading" secondItem="u6Z-kk-GU7" secondAttribute="trailing" constant="90" id="To2-yW-t7T"/>
+                    <constraint firstItem="lRZ-Vl-DSR" firstAttribute="centerY" secondItem="fta-p5-7Bh" secondAttribute="centerY" id="W1a-af-zWf"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="u6Z-kk-GU7" secondAttribute="bottom" constant="0.5" id="Wnr-nT-FRI"/>
+                    <constraint firstItem="lRZ-Vl-DSR" firstAttribute="top" secondItem="fta-p5-7Bh" secondAttribute="topMargin" constant="-2" id="j7P-Yt-xx0"/>
+                    <constraint firstItem="Vmb-bQ-erA" firstAttribute="leading" secondItem="fta-p5-7Bh" secondAttribute="leadingMargin" id="rCJ-ao-IIN"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="lRZ-Vl-DSR" secondAttribute="trailing" constant="7" id="zu7-Wj-paU"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.69411766529999996" green="0.58039218189999997" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
             <connections>
                 <outlet property="addressLabel" destination="Vmb-bQ-erA" id="GWN-lM-88v"/>
-                <outlet property="backgroundImageView" destination="Uya-NI-c2O" id="Eip-ba-8gd"/>
                 <outlet property="timeLabel" destination="u6Z-kk-GU7" id="mrw-Ez-46B"/>
                 <outlet property="userImageView" destination="lRZ-Vl-DSR" id="G1W-r3-Dsb"/>
             </connections>
