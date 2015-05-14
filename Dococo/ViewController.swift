@@ -20,7 +20,7 @@ class ViewController: UIViewController, CAPSPageMenuDelegate, CLLocationManagerD
         super.viewDidLoad()
         
         // MARK: - NavigationBarの外見を設定
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 18.0/255.0, green: 150.0/255.0, blue: 225.0/255.0, alpha: 1.0)
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 73.0/255.0, green: 191.0/255.0, blue: 226.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
         let backButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
@@ -38,7 +38,7 @@ class ViewController: UIViewController, CAPSPageMenuDelegate, CLLocationManagerD
         var timelineViewController : TimelineViewController? = self.storyboard?.instantiateViewControllerWithIdentifier("timeline") as? TimelineViewController
         timelineViewController?.title = "タイムライン"
         timelineViewController?.parentNavigationController = self.navigationController
-        //controllersArray.append(timelineViewController!)
+        controllersArray.append(timelineViewController!)
         
         var othersViewController :OthersViewController? =  self.storyboard?.instantiateViewControllerWithIdentifier("others") as? OthersViewController
         othersViewController?.title = "設定"
@@ -47,13 +47,13 @@ class ViewController: UIViewController, CAPSPageMenuDelegate, CLLocationManagerD
         
         // MARK: - PageMenuのパラメーター設定
         var parameters: [String: AnyObject] = ["menuItemSeparatorWidth": 3.0,
-            "scrollMenuBackgroundColor": UIColor(red: 18.0/255.0, green: 150.0/255.0, blue: 225.0/255.0, alpha: 1.0),
+            "scrollMenuBackgroundColor": UIColor(red: 73.0/255.0, green: 191.0/255.0, blue: 226.0/255.0, alpha: 1.0),
             "viewBackgroundColor": UIColor(red: 20.0/255.0, green: 20.0/255.0, blue: 20.0/255.0, alpha: 0.1),
             "bottomMenuHairlineColor": UIColor(red: 20.0/255.0, green: 20.0/255.0, blue: 20.0/255.0, alpha: 0.1),
             "selectionIndicatorColor": UIColor.whiteColor(),
             "menuMargin": 0,
             "menuHeight": 40.0,
-            "menuItemWidth": self.view.frame.width/2,
+            "menuItemWidth": self.view.frame.width/3,
             "selectedMenuItemLabelColor": UIColor.whiteColor(),
             "unselectedMenuItemLabelColor": UIColor(red: 220/255, green: 220/255, blue: 220/255, alpha: 1.0),
             "menuItemFont": UIFont(name: "HelveticaNeue-Medium", size: 15.0)!,
@@ -70,9 +70,11 @@ class ViewController: UIViewController, CAPSPageMenuDelegate, CLLocationManagerD
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        println("view did appear")
         // MARK: - ユーザーのログインチェック
         if (PFUser.currentUser() == nil){
             // MARK: - ログインビューに遷移する
+            println("ユーザーはログインしていません")
             self.performSegueWithIdentifier("login", sender: nil)
         }else{
             // MARK: -  Push通知のためのチャンネル登録

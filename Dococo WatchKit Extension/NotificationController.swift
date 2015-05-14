@@ -11,22 +11,28 @@ import Foundation
 
 
 class NotificationController: WKUserNotificationInterfaceController {
+    @IBOutlet var messageLabel: WKInterfaceLabel!
 
     override init() {
         // Initialize variables here.
         super.init()
         
         // Configure interface objects here.
+        println("initialization of watch kit notification")
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        println("watch will active")
+
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        println("watch did deactivate")
+
     }
 
     /*

@@ -13,7 +13,6 @@ import pop
 import SCLAlertView
 import Parse
 
-
 class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapViewDelegate,UITableViewDelegate,UITableViewDataSource {
     
     var docoButton : HTPressableButton?
@@ -77,7 +76,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
         tableView = UITableView(frame: CGRectMake(0, self.mapView!.frame.height, self.view.frame.size.width, self.view.frame.height-self.view.frame.height/2.5-65), style: UITableViewStyle.Grouped)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = UIColor.grayColor()
+        tableView.backgroundColor = UIColor.whiteColor()
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         tableView.registerNib(UINib(nibName: "TargetCocoCell", bundle: nil), forCellReuseIdentifier: "TargetCocoCell")
         tableView.registerNib(UINib(nibName: "TargetDocoCell", bundle: nil), forCellReuseIdentifier: "TargetDocoCell")
@@ -120,6 +119,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                 self.targetUserImage = UIImage(data: imageData)
             }
         }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -127,6 +127,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
         //MARK: - 投稿の取得、描画
         self.getPosts()
     }
+    
     //MARK - : Cocobutton、Docobuttonの挙動の設定
     func cocobuttonTapped(button: UIButton) {
         var object :PFObject = PFObject(className: "Coco")
@@ -167,7 +168,10 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                         let push = PFPush()
                         push.setChannel(self.targetUser?.objectId)
                         var name :NSString! = PFUser.currentUser().objectForKey("name") as NSString
-                        push.setMessage("\(name)からCocoが届きました")
+                        push.setData([
+                            "sound":"alert.caf",
+                            "alert":"\(name)からCocoが届きました"
+                            ])
                         push.sendPushInBackgroundWithBlock({ (succeeded :Bool!, error :NSError!) -> Void in
                             if (error==nil){
                                 println("プッシュ通知成功")
@@ -203,7 +207,10 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                         let push = PFPush()
                         push.setChannel(self.targetUser?.objectId)
                         var name :NSString! = PFUser.currentUser().objectForKey("name") as NSString
-                        push.setMessage("\(name)からDocoが届きました")
+                        push.setData([
+                            "sound":"alert.caf",
+                            "alert":"\(name)からDocoが届きました"
+                            ])
                         push.sendPushInBackgroundWithBlock({ (succeeded :Bool!, error :NSError!) -> Void in
                             if (error==nil){
                                 println("push notification succeeded")
@@ -254,7 +261,6 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
         
         var unitedCocoQuery = PFQuery.orQueryWithSubqueries([userCocoQuery, targetCocoQuery])
         //TODO: 使い勝手によってlimitを調節する
-        unitedCocoQuery.limit = 20
         unitedCocoQuery.orderByDescending("createdAt")
         unitedCocoQuery.findObjectsInBackgroundWithBlock { (cocoObjects:[AnyObject]!, error :NSError!) -> Void in
             if error == nil{
@@ -265,9 +271,12 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                     self.addMarkerofObject(cocoObject)
                 }
                 
+                //MARK: - 統合したDocoQueryで検索開始
                 var unitedDocoQuery = PFQuery.orQueryWithSubqueries([userDocoQuery, targetDocoQuery])
+                //CocoQueryの検索結果で最も古いものよりも新しいDocoしか検索しないようにする
                 unitedDocoQuery.orderByDescending("createdAt")
                 unitedDocoQuery.findObjectsInBackgroundWithBlock({ (docoObjects :[AnyObject]!, error:NSError!) -> Void in
+                    
                     if error == nil{
                         for docoObject in docoObjects{
                             self.posts.append(docoObject as PFObject)
@@ -279,6 +288,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                             self.tableView.reloadData()
                             self.activityIndicator.stopAnimating()
                         }
+                        
                         //MARK: - isCocoIndexへの値の追加
                         for post:PFObject in self.posts as [PFObject]{
                             var className = post.parseClassName
@@ -289,17 +299,18 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
                             }
                         }
                     }else{
-                        println("エラー")
+                        println("DocoQuery失敗")
                     }
                 })
             }else{
-                println("エラー")
+                println("CocoQuery失敗")
             }
         }
     }
     
     //MARK: - markerのMapViewへの設置
     func addMarkerofObject(object:PFObject) {
+        
         let point :PFGeoPoint = object.objectForKey("point") as PFGeoPoint
         let marker :GMSMarker = GMSMarker(position: CLLocationCoordinate2DMake(point.latitude, point.longitude))
         marker.snippet = formatter.stringFromDate(object.createdAt)
@@ -312,7 +323,8 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
     
     //MARK: - 再読込
     func refresh() {
-        println("リフレッシュ!")
+        
+        println("リフレッシュ")
         self.refreshActivityIndicator = UIActivityIndicatorView(frame: CGRectMake((self.refreshButton!.frame.width-self.refreshButton!.frame.height)/2, 0, self.refreshButton!.frame.height, self.refreshButton!.frame.height))
         self.refreshButton?.addSubview(refreshActivityIndicator)
         self.refreshActivityIndicator.startAnimating()
@@ -322,6 +334,7 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
         }
         // MARK: - getPostメソッドのQueryにlastupdateの日付制限を加える
         lastUpdate = NSDate()
+        
         //4つのqueryを作り、二つの統合queryを作る
         var userCocoQuery = PFQuery(className: "Coco")
         var userDocoQuery = PFQuery(className: "Doco")
@@ -338,7 +351,6 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
         
         var unitedCocoQuery = PFQuery.orQueryWithSubqueries([userCocoQuery, targetCocoQuery])
         //TODO: 使い勝手によってlimitを調節する
-        unitedCocoQuery.limit = 20
         unitedCocoQuery.whereKey("createdAt", lessThan: lastUpdate)
         unitedCocoQuery.orderByDescending("createdAt")
         unitedCocoQuery.findObjectsInBackgroundWithBlock { (cocoObjects:[AnyObject]!, error :NSError!) -> Void in
@@ -411,7 +423,8 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 64.0
+        println("height")
+        return 76.5
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -423,16 +436,17 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        println("view for header")
         let headerView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 30))
-        headerView.backgroundColor = UIColor.yellowColor()
+        headerView.backgroundColor = UIColor(red: 73.0/255.0, green: 191.0/255.0, blue: 226.0/255.0, alpha: 1.0)
         let titleLabel = UILabel(frame: CGRectMake(10, 0, 100, 30))
         titleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 15.0)!
         titleLabel.tintColor = UIColor.whiteColor()
         headerView.addSubview(titleLabel)
         //MARK: - refreshButtonの設置
-        self.refreshButton = UIButton(frame: CGRectMake(self.view.center.x-30, 0, 60.0, 40.0))
-        self.refreshButton?.backgroundColor = UIColor.blueColor()
+        self.refreshButton = UIButton(frame: CGRectMake(self.view.frame.maxX-30.0, 0, 30.0, 30.0))
         self.refreshButton?.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.TouchUpInside)
+        self.refreshButton?.setBackgroundImage(UIImage(named: "refresh"), forState: UIControlState.Normal)
         self.tableView.addSubview(self.refreshButton!)
         return headerView
     }
@@ -446,9 +460,11 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
         var fromUser = post.objectForKey("from") as PFUser
         
         if className == "Coco" && fromUser == PFUser.currentUser(){
+            println("user coco")
             //ユーザーからターゲットに送ったCocoのPFObject
             let cell : UserCocoCell = tableView.dequeueReusableCellWithIdentifier("UserCocoCell") as UserCocoCell
             //MARK: - 住所の取得
+            cell.messageLabel?.text = "\(self.title)にCocoを送りました"
             var point = post.objectForKey("point") as PFGeoPoint
             CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: point.latitude, longitude: point.longitude
                 ), completionHandler: { (placemarks :[AnyObject]!, error :NSError!) -> Void in
@@ -464,13 +480,24 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
             cell.userImageView.image = currentUserImage
             cell.timeLabel.text = formatter.stringFromDate(post.createdAt)
             return cell
+            
         }else if className == "Doco" && fromUser == PFUser.currentUser(){
+            println("user Doco")
             //ユーザーからターゲットに送ったDocoのPFObject
             let cell : UserDocoCell = tableView.dequeueReusableCellWithIdentifier("UserDocoCell") as UserDocoCell
+            //cell.messageLabel?.text = "\(self.title)にDocoを送りました"
+            //cell.timeLabel.text = formatter.stringFromDate(post.createdAt)
+            //cell.userImageView.image = currentUserImage
+
             return cell
+            
         }else if className == "Coco" && fromUser == targetUser{
+            println("target coco")
             //ターゲットからユーザーに送ったCocoのPFObject
             let cell : TargetCocoCell = tableView.dequeueReusableCellWithIdentifier("TargetCocoCell") as TargetCocoCell
+            println("チェック")
+            //cell.messageLabel?.text = "\(self.title)からCocoが届きました"
+            
             var point = post.objectForKey("point") as PFGeoPoint
             CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: point.latitude, longitude: point.longitude
                 ), completionHandler: { (placemarks :[AnyObject]!, error :NSError!) -> Void in
@@ -487,11 +514,16 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
             return cell
         }
         else{
+            println("target doco")
             //ターゲットからユーザーに送ったDocoのPFObject
             let cell : TargetDocoCell = tableView.dequeueReusableCellWithIdentifier("TargetDocoCell") as TargetDocoCell
+            //cell.userImageView.image = currentUserImage
+            //cell.messageLabel?.text = "\(self.title)からDocoが届きました"
+            //cell.timeLabel.text = formatter.stringFromDate(post.createdAt)
             return cell
         }
     }
+    
     //MARK: -　セルタップ時の挙動を設定
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if isCocoIndex[indexPath.row]{
@@ -522,9 +554,19 @@ class DetailViewController: UIViewController,CLLocationManagerDelegate, GMSMapVi
     
     func deleteFriendConfirmed(sender:AnyObject!){
         println("友達から削除決定")
-        var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        appDelegate.removableUser = targetUser
-        self.navigationController?.popViewControllerAnimated(true)
+        var friends: [PFUser]! = PFUser.currentUser().objectForKey("friends") as [PFUser]!
+        let index = find(friends, targetUser!)
+        friends.removeAtIndex(index!)
+        PFUser.currentUser()["friends"] = friends
+        PFUser.currentUser().saveInBackgroundWithBlock { (succeeded:Bool, error:NSError!) -> Void in
+            if error == nil{
+                var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                appDelegate.removableUser = self.targetUser
+                self.navigationController?.popViewControllerAnimated(true)
+            }else{
+                println("エラー発生")
+            }
+        }
     }
 }
 

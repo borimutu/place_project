@@ -13,6 +13,9 @@
 		6D1110381AEFE76800E407AD /* user_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1110371AEFE76800E407AD /* user_placeholder@2x.png */; };
 		6D11103A1AF07D0A00E407AD /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1110391AF07D0A00E407AD /* FriendsTableViewController.swift */; };
 		6D1D35851AFC8EC60019DC5B /* noimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D35841AFC8EC60019DC5B /* noimage.jpg */; };
+		6D1D35DB1B030BAC0019DC5B /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D35D81B030BAC0019DC5B /* refresh@2x.png */; };
+		6D1D35DC1B030BAC0019DC5B /* userballoon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D35D91B030BAC0019DC5B /* userballoon@2x.png */; };
+		6D1D35DD1B030BAC0019DC5B /* targetballoon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D1D35DA1B030BAC0019DC5B /* targetballoon@2x.png */; };
 		6D353BBB1ADA1B040086A73D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BB91ADA1B040086A73D /* LoginViewController.swift */; };
 		6D353BC31ADA73810086A73D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BC11ADA73810086A73D /* DetailViewController.swift */; };
 		6D353BC71ADB83AA0086A73D /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D353BC51ADB83AA0086A73D /* TimelineViewController.swift */; };
@@ -32,13 +35,19 @@
 		6D7EC4F81ADD61B200364757 /* ThirdstepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7EC4F61ADD61B200364757 /* ThirdstepViewController.swift */; };
 		6D7EC4FC1ADD61D200364757 /* FourthstepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7EC4FA1ADD61D200364757 /* FourthstepViewController.swift */; };
 		6D8C321D1AECA8730022E1D6 /* UserDocoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C321B1AECA8730022E1D6 /* UserDocoCell.swift */; };
-		6D8C321E1AECA8730022E1D6 /* UserDocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8C321C1AECA8730022E1D6 /* UserDocoCell.xib */; };
 		6D8C32231AEE1F950022E1D6 /* TargetDocoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C32211AEE1F950022E1D6 /* TargetDocoCell.swift */; };
-		6D8C32241AEE1F950022E1D6 /* TargetDocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8C32221AEE1F950022E1D6 /* TargetDocoCell.xib */; };
 		6D8C32271AEE1FA70022E1D6 /* UserCocoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8C32251AEE1FA70022E1D6 /* UserCocoCell.swift */; };
-		6D8C32281AEE1FA70022E1D6 /* UserCocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D8C32261AEE1FA70022E1D6 /* UserCocoCell.xib */; };
+		6DC67DF81B03179B00F8BF36 /* TargetCocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC67DF71B03179B00F8BF36 /* TargetCocoCell.xib */; };
+		6DC67DFA1B0317AD00F8BF36 /* TargetDocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC67DF91B0317AD00F8BF36 /* TargetDocoCell.xib */; };
+		6DC67DFC1B0317BD00F8BF36 /* UserCocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC67DFB1B0317BD00F8BF36 /* UserCocoCell.xib */; };
+		6DC67DFE1B0317C800F8BF36 /* UserDocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DC67DFD1B0317C800F8BF36 /* UserDocoCell.xib */; };
+		6DC67E331B03204200F8BF36 /* targetcellbackground5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC67E2D1B03204200F8BF36 /* targetcellbackground5@2x.png */; };
+		6DC67E341B03204200F8BF36 /* targetcellbackground6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC67E2E1B03204200F8BF36 /* targetcellbackground6@2x.png */; };
+		6DC67E351B03204200F8BF36 /* targetcellbackground6plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC67E2F1B03204200F8BF36 /* targetcellbackground6plus@3x.png */; };
+		6DC67E361B03204200F8BF36 /* usercellbackground5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC67E301B03204200F8BF36 /* usercellbackground5@2x.png */; };
+		6DC67E371B03204200F8BF36 /* usercellbackground6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC67E311B03204200F8BF36 /* usercellbackground6@2x.png */; };
+		6DC67E381B03204200F8BF36 /* usercellbackground6plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DC67E321B03204200F8BF36 /* usercellbackground6plus@3x.png */; };
 		6DD43C961AEBA124005F57E3 /* TargetCocoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD43C941AEBA124005F57E3 /* TargetCocoCell.swift */; };
-		6DD43C971AEBA124005F57E3 /* TargetCocoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD43C951AEBA124005F57E3 /* TargetCocoCell.xib */; };
 		6DD8D95C1AE734C200C04BD9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8D95B1AE734C200C04BD9 /* ProfileViewController.swift */; };
 		6DD8D95E1AE7358300C04BD9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD8D95D1AE7358300C04BD9 /* SettingViewController.swift */; };
 		6DE1F99F1AD947B5002481E1 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DE1F99E1AD947B5002481E1 /* ParseUI.framework */; };
@@ -120,6 +129,9 @@
 		6D1110371AEFE76800E407AD /* user_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_placeholder@2x.png"; sourceTree = "<group>"; };
 		6D1110391AF07D0A00E407AD /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		6D1D35841AFC8EC60019DC5B /* noimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noimage.jpg; sourceTree = "<group>"; };
+		6D1D35D81B030BAC0019DC5B /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
+		6D1D35D91B030BAC0019DC5B /* userballoon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userballoon@2x.png"; sourceTree = "<group>"; };
+		6D1D35DA1B030BAC0019DC5B /* targetballoon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "targetballoon@2x.png"; sourceTree = "<group>"; };
 		6D353BB91ADA1B040086A73D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6D353BC11ADA73810086A73D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6D353BC51ADB83AA0086A73D /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -143,13 +155,19 @@
 		6D7EC4F61ADD61B200364757 /* ThirdstepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdstepViewController.swift; sourceTree = "<group>"; };
 		6D7EC4FA1ADD61D200364757 /* FourthstepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthstepViewController.swift; sourceTree = "<group>"; };
 		6D8C321B1AECA8730022E1D6 /* UserDocoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDocoCell.swift; sourceTree = "<group>"; };
-		6D8C321C1AECA8730022E1D6 /* UserDocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDocoCell.xib; sourceTree = "<group>"; };
 		6D8C32211AEE1F950022E1D6 /* TargetDocoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetDocoCell.swift; sourceTree = "<group>"; };
-		6D8C32221AEE1F950022E1D6 /* TargetDocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TargetDocoCell.xib; sourceTree = "<group>"; };
 		6D8C32251AEE1FA70022E1D6 /* UserCocoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCocoCell.swift; sourceTree = "<group>"; };
-		6D8C32261AEE1FA70022E1D6 /* UserCocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCocoCell.xib; sourceTree = "<group>"; };
+		6DC67DF71B03179B00F8BF36 /* TargetCocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TargetCocoCell.xib; sourceTree = "<group>"; };
+		6DC67DF91B0317AD00F8BF36 /* TargetDocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TargetDocoCell.xib; sourceTree = "<group>"; };
+		6DC67DFB1B0317BD00F8BF36 /* UserCocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCocoCell.xib; sourceTree = "<group>"; };
+		6DC67DFD1B0317C800F8BF36 /* UserDocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDocoCell.xib; sourceTree = "<group>"; };
+		6DC67E2D1B03204200F8BF36 /* targetcellbackground5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "targetcellbackground5@2x.png"; sourceTree = "<group>"; };
+		6DC67E2E1B03204200F8BF36 /* targetcellbackground6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "targetcellbackground6@2x.png"; sourceTree = "<group>"; };
+		6DC67E2F1B03204200F8BF36 /* targetcellbackground6plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "targetcellbackground6plus@3x.png"; sourceTree = "<group>"; };
+		6DC67E301B03204200F8BF36 /* usercellbackground5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "usercellbackground5@2x.png"; sourceTree = "<group>"; };
+		6DC67E311B03204200F8BF36 /* usercellbackground6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "usercellbackground6@2x.png"; sourceTree = "<group>"; };
+		6DC67E321B03204200F8BF36 /* usercellbackground6plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "usercellbackground6plus@3x.png"; sourceTree = "<group>"; };
 		6DD43C941AEBA124005F57E3 /* TargetCocoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetCocoCell.swift; sourceTree = "<group>"; };
-		6DD43C951AEBA124005F57E3 /* TargetCocoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TargetCocoCell.xib; sourceTree = "<group>"; };
 		6DD8D95B1AE734C200C04BD9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6DD8D95D1AE7358300C04BD9 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		6DE1F99E1AD947B5002481E1 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
@@ -263,13 +281,13 @@
 			isa = PBXGroup;
 			children = (
 				6DD43C941AEBA124005F57E3 /* TargetCocoCell.swift */,
-				6DD43C951AEBA124005F57E3 /* TargetCocoCell.xib */,
+				6DC67DF71B03179B00F8BF36 /* TargetCocoCell.xib */,
 				6D8C32211AEE1F950022E1D6 /* TargetDocoCell.swift */,
-				6D8C32221AEE1F950022E1D6 /* TargetDocoCell.xib */,
+				6DC67DF91B0317AD00F8BF36 /* TargetDocoCell.xib */,
 				6D8C32251AEE1FA70022E1D6 /* UserCocoCell.swift */,
-				6D8C32261AEE1FA70022E1D6 /* UserCocoCell.xib */,
+				6DC67DFB1B0317BD00F8BF36 /* UserCocoCell.xib */,
 				6D8C321B1AECA8730022E1D6 /* UserDocoCell.swift */,
-				6D8C321C1AECA8730022E1D6 /* UserDocoCell.xib */,
+				6DC67DFD1B0317C800F8BF36 /* UserDocoCell.xib */,
 				6D11102D1AEE24EC00E407AD /* FriendsTableViewCell.swift */,
 				6D11102E1AEE24EC00E407AD /* FriendsTableViewCell.xib */,
 			);
@@ -320,6 +338,15 @@
 		6D48E19D1AD8DEA100884C3A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6DC67E2D1B03204200F8BF36 /* targetcellbackground5@2x.png */,
+				6DC67E2E1B03204200F8BF36 /* targetcellbackground6@2x.png */,
+				6DC67E2F1B03204200F8BF36 /* targetcellbackground6plus@3x.png */,
+				6DC67E301B03204200F8BF36 /* usercellbackground5@2x.png */,
+				6DC67E311B03204200F8BF36 /* usercellbackground6@2x.png */,
+				6DC67E321B03204200F8BF36 /* usercellbackground6plus@3x.png */,
+				6D1D35D81B030BAC0019DC5B /* refresh@2x.png */,
+				6D1D35D91B030BAC0019DC5B /* userballoon@2x.png */,
+				6D1D35DA1B030BAC0019DC5B /* targetballoon@2x.png */,
 				6D1D35841AFC8EC60019DC5B /* noimage.jpg */,
 				6D1110371AEFE76800E407AD /* user_placeholder@2x.png */,
 				6DF093C11AD8E38300B44899 /* star_white.png */,
@@ -565,31 +592,40 @@
 				6DF093D11AD8E38300B44899 /* phone_down.png in Resources */,
 				6DF093E31AD8E38E00B44899 /* woman2.jpg in Resources */,
 				6D48E1A51AD8DEA100884C3A /* Main.storyboard in Resources */,
+				6DC67E351B03204200F8BF36 /* targetcellbackground6plus@3x.png in Resources */,
 				6D48E1AA1AD8DEA100884C3A /* LaunchScreen.xib in Resources */,
-				6D8C32241AEE1F950022E1D6 /* TargetDocoCell.xib in Resources */,
 				6DF093C91AD8E38300B44899 /* man4.jpg in Resources */,
 				6D48E1C21AD8E21D00884C3A /* close.png in Resources */,
+				6DC67DFE1B0317C800F8BF36 /* UserDocoCell.xib in Resources */,
 				6DF093CA1AD8E38300B44899 /* man5.jpg in Resources */,
 				6DE9FB481AE0ECAA00C03464 /* TwitterKitResources.bundle in Resources */,
+				6DC67DFA1B0317AD00F8BF36 /* TargetDocoCell.xib in Resources */,
 				6DF093D81AD8E38300B44899 /* star_white.png in Resources */,
 				6DF093C61AD8E38300B44899 /* man1.jpg in Resources */,
 				6DF093E21AD8E38E00B44899 /* woman1.jpg in Resources */,
+				6D1D35DB1B030BAC0019DC5B /* refresh@2x.png in Resources */,
 				6DF093CE1AD8E38300B44899 /* man9.jpg in Resources */,
-				6DD43C971AEBA124005F57E3 /* TargetCocoCell.xib in Resources */,
 				6D353BD81ADBB5ED0086A73D /* TextFieldEffects in Resources */,
-				6D8C32281AEE1FA70022E1D6 /* UserCocoCell.xib in Resources */,
-				6D8C321E1AECA8730022E1D6 /* UserDocoCell.xib in Resources */,
+				6D1D35DD1B030BAC0019DC5B /* targetballoon@2x.png in Resources */,
+				6DC67DF81B03179B00F8BF36 /* TargetCocoCell.xib in Resources */,
 				6DF093C81AD8E38300B44899 /* man3.jpg in Resources */,
 				6DF093E51AD8E38E00B44899 /* woman4.jpg in Resources */,
+				6DC67E331B03204200F8BF36 /* targetcellbackground5@2x.png in Resources */,
 				6D48E1A71AD8DEA100884C3A /* Images.xcassets in Resources */,
+				6DC67E361B03204200F8BF36 /* usercellbackground5@2x.png in Resources */,
 				6DF093E61AD8E38E00B44899 /* woman5.jpg in Resources */,
+				6D1D35DC1B030BAC0019DC5B /* userballoon@2x.png in Resources */,
+				6DC67E341B03204200F8BF36 /* targetcellbackground6@2x.png in Resources */,
+				6DC67E371B03204200F8BF36 /* usercellbackground6@2x.png in Resources */,
 				6DF093CD1AD8E38300B44899 /* man8.jpg in Resources */,
 				6D1110301AEE24EC00E407AD /* FriendsTableViewCell.xib in Resources */,
+				6DC67E381B03204200F8BF36 /* usercellbackground6plus@3x.png in Resources */,
 				6DF093CC1AD8E38300B44899 /* man7.jpg in Resources */,
 				6D1D35851AFC8EC60019DC5B /* noimage.jpg in Resources */,
 				6D1110381AEFE76800E407AD /* user_placeholder@2x.png in Resources */,
 				6DF093CB1AD8E38300B44899 /* man6.jpg in Resources */,
 				6DF093D31AD8E38300B44899 /* phone_send.png in Resources */,
+				6DC67DFC1B0317BD00F8BF36 /* UserCocoCell.xib in Resources */,
 				6DF093E41AD8E38E00B44899 /* woman3.jpg in Resources */,
 				6DF093D21AD8E38300B44899 /* phone_receive.png in Resources */,
 			);

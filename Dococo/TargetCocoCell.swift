@@ -9,15 +9,40 @@
 import UIKit
 
 class TargetCocoCell: UITableViewCell {
-    @IBOutlet var timeLabel: UILabel!
-    @IBOutlet var addressLabel: UILabel!
-    @IBOutlet var backgroundImageView: UIImageView!
-    @IBOutlet var userImageView: UIImageView!
+    var timeLabel: UILabel!
+    var userImageView: UIImageView!
+    var messageLabel: UILabel?
+    var addressLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        userImageView.frame = CGRectMake(userImageView.frame.origin.x, userImageView.frame.origin.y, 50.0, 50.0)
-        userImageView.layer.cornerRadius = self.userImageView.frame.width/2
+        //選択された時のbackgroundViewを設定
+
+        userImageView.layer.cornerRadius = userImageView.frame.height/2
         userImageView.clipsToBounds = true
+        //TODO:　デバイスの幅によって背景画像、種々ラベル、ユーザー画像の種類、位置を設定する
+        var deviceWidth = UIScreen.mainScreen().bounds.width
+        //5のとき
+        if deviceWidth == 320{
+            self.backgroundColor = UIColor(patternImage: UIImage(named: "targetcellbackground5")!)
+            /*var selectedBackgroundView = UIView(frame: self.frame)
+            selectedBackgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "targetcellbackground5selected")!)
+            self.selectedBackgroundView = selectedBackgroundView*/
+            
+        }else if deviceWidth == 375{
+            self.backgroundColor = UIColor(patternImage: UIImage(named: "targetcellbackground6")!)
+            /*var selectedBackgroundView = UIView(frame: self.frame)
+            selectedBackgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "targetcellbackground6selected")!)
+            self.selectedBackgroundView = selectedBackgroundView*/
+
+        }else if deviceWidth == 414{
+            self.backgroundColor = UIColor(patternImage: UIImage(named: "targetcellbackground6plus")!)
+            /*var selectedBackgroundView = UIView(frame: self.frame)
+            selectedBackgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "targetcellbackground6plusselected")!)
+            self.selectedBackgroundView = selectedBackgroundView*/
+        }else{
+            println("4S？")
+        }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

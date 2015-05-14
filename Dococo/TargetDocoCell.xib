@@ -6,14 +6,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TargetDocoCell" id="0bc-Bg-OvP" customClass="TargetDocoCell" customModule="Dococo" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TargetDocoCell" rowHeight="77" id="0bc-Bg-OvP" customClass="TargetDocoCell" customModule="Dococo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0bc-Bg-OvP" id="Hhw-3p-jds">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <color key="backgroundColor" red="0.69411766529999996" green="0.58039218189999997" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
             </tableViewCellContentView>
+            <point key="canvasLocation" x="290" y="243.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -25,6 +25,8 @@ class OthersViewController: UIViewController ,UIScrollViewDelegate,UITableViewDe
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        println("view did appear")
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,43 +35,24 @@ class OthersViewController: UIViewController ,UIScrollViewDelegate,UITableViewDe
     
     // MARK: - TableViewのデリゲートメソッド
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         println("cell")
         let cell : UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        if indexPath.section == 0{
-            cell.textLabel?.text = "友達追加"
+        if indexPath.row == 0{
+        cell.textLabel?.text = "友達追加"
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        }else if indexPath.section == 1{
-            cell.textLabel?.text = "プロフィール"
+        }else{
+        cell.textLabel?.text = "プロフィール"
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        }/*else if indexPath.section == 2{
-            cell.textLabel?.text = "設定"
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        }*/
-        else{
-            println("エラー")
         }
         return cell
-        /*let cell : FriendsTableViewCell = tableView.dequeueReusableCellWithIdentifier("FriendsTableViewCell") as FriendsTableViewCell
-        var friendData = friendsArray[indexPath.row]
-        friendData.fetchInBackgroundWithBlock { (object :PFObject!, error :NSError!) -> Void in
-            var friend = object as PFUser!
-            cell.nameLabel.text = friend.objectForKey("name") as? String
-            var pictureFile: PFFile! = friend.objectForKey("profilePicture") as PFFile
-            pictureFile.getDataInBackgroundWithBlock({ (data:NSData!, error:NSError!) -> Void in
-                var pictureImage = UIImage(data: data)
-                cell.userImageView.image = pictureImage
-            })
-        }
-        self.activityIndicator.stopAnimating()
-        return cell*/
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -78,7 +61,7 @@ class OthersViewController: UIViewController ,UIScrollViewDelegate,UITableViewDe
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 40
+        return 50
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -86,16 +69,16 @@ class OthersViewController: UIViewController ,UIScrollViewDelegate,UITableViewDe
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 20
+        return 30
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0{
+        if indexPath.row == 0{
             self.addFriendButtonTapped()
-        }else if indexPath.section == 1{
+        }else if indexPath.row == 1{
             self.profileButtonTapped()
         }else{
-            println("エラー発生、指定セクション存在せず")
+            println("エラー発生、指定行存在せず")
         }
     }
     

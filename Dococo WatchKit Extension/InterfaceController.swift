@@ -16,17 +16,19 @@ class InterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
+        println("watch did active")
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        println("watchがアクティブになる")
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
-        println("viewがアクティブになった")
+        println("viewがアクティブじゃなくなった")
     }
 
 }

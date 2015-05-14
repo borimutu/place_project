@@ -22,13 +22,13 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
     var friends :[PFUser]? = []
     var markers : [GMSMarker] = []
     var sentDates : [String] = []
-    @IBOutlet var tableView: UITableView!
     var activityIndicator: UIActivityIndicatorView!
     var refreshControl:UIRefreshControl!
     var lastUpdate : NSDate?
     var posts : [PFObject]? = []
     var formatter :NSDateFormatter = NSDateFormatter()
     
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,10 +66,15 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
         
         //MARK: - tableview設置
         tableView = UITableView(frame: CGRectMake(0, self.mapView!.frame.height, self.view.frame.size.width, self.view.frame.height-self.view.frame.height/2.5-65), style: UITableViewStyle.Grouped)
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        self.view.addSubview(tableView)
-        tableView.registerNib(UINib(nibName: "TargetCocoCell", bundle: nil), forCellReuseIdentifier: "TargetCocoCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = UIColor.whiteColor()
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
 
+        tableView.registerNib(UINib(nibName: "TargetCocoCell", bundle: nil), forCellReuseIdentifier: "TargetCocoCell")
+        tableView.registerNib(UINib(nibName: "UserCocoCell", bundle: nil), forCellReuseIdentifier: "UserCocoCell")
+
+        
         //MARK: - activityindicatorを表示
         activityIndicator = UIActivityIndicatorView(frame: CGRectMake(self.view.center.x-30, self.tableView.center.y-30, 60, 60))
         activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
@@ -81,6 +86,10 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
         refreshControl!.addTarget(self, action: "getPoint", forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl!)
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
         //MARK: - 投稿の取得、描画
         self.getPosts()
     }
@@ -95,8 +104,12 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
     
     //MARK: - Cocoボタンタップ時の挙動設定
     func cocobuttonTapped(button: UIButton) {
-        var object :PFObject = PFObject(className: "FriendsCoco")
-        object["to"] = friends
+        var object :PFObject = PFObject(className: "cocoFriends")
+        var friendsidArray: [String] = []
+        for friend in friends!{
+            friendsidArray.append(friend.objectId)
+        }
+        object["to"] = friendsidArray
         object["from"] = PFUser.currentUser()
         PFGeoPoint.geoPointForCurrentLocationInBackground { (point :PFGeoPoint?, error :NSError?) -> Void in
             if (error == nil){
@@ -126,21 +139,25 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
     }
     
     func getPosts() {
-        var query :PFQuery = PFQuery(className: "FriendsCoco")
+        println("getposts")
+        var query :PFQuery = PFQuery(className: "cocoFriends")
         query.limit = 50
-        
-        query.whereKey("to", equalTo: PFUser.currentUser()!)
+        //query.whereKey("toFriends", containsAllObjectsInArray: [PFUser.currentUser()])
+        //query.whereKey("to", containsString: PFUser.currentUser().objectId)
+        query.whereKey("to", equalTo: PFUser.currentUser().objectId)
         println("検索準備開始")
-        query.findObjectsInBackgroundWithBlock { (objects :[AnyObject]?, error :NSError?) -> Void in
+        query.findObjectsInBackgroundWithBlock { (objects :[AnyObject]!, error :NSError!) -> Void in
             if error == nil{
                 if objects!.count == 0{
                     println("検索結果0件")
                     self.refreshControl.endRefreshing()
                     self.activityIndicator.stopAnimating()
                 }else{
-                    println(objects?.count)
-                    println("エラー無し")
-                    for object :PFObject! in objects as [PFObject]{
+                    println(objects.count)
+                    println("検索結果1件以上")
+                    println(objects)
+                    self.activityIndicator.stopAnimating()
+                    /*for object :PFObject! in objects as [PFObject]{
                         self.posts?.append(object)
                         /*
                         var marker:GMSMarker? = GMSMarker()
@@ -155,7 +172,7 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
                         self.tableView.dataSource = self
                         self.tableView.reloadData()
                         self.activityIndicator.stopAnimating()
-                    }
+                    }*/
                 }
             }else{
                 println("エラー発生")
@@ -181,9 +198,9 @@ class TimelineViewController: UIViewController ,GMSMapViewDelegate, CLLocationMa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         println("cell for row at index")
         let cell : TargetCocoCell = tableView.dequeueReusableCellWithIdentifier("TargetCocoCell") as TargetCocoCell
-        println(indexPath.row)
+        /*println(indexPath.row)
         var num = indexPath.row
-        var post = self.posts![num]
+        var post = self.posts![num]*/
         
         //var post: PFObject = self.posts![indexPath.row]
         //var postUser :PFUser? = post.objectForKey("from") as? PFUser

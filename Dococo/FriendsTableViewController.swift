@@ -12,7 +12,14 @@ import Parse
 class FriendsTableViewController: UITableViewController,UINavigationControllerDelegate {
     
     var parentNavigationController : UINavigationController?
-    var friendsArray : [PFUser]? = []
+    var friendsArray : [PFUser]? = []{
+    willSet(newTotalSteps) {
+        println("will set")
+    }
+    didSet {
+        println("did set")
+        }
+    }
     var object = PFObject(className: "TestObject")
     var selectedIndex :Int?
     var activityIndicator: UIActivityIndicatorView!
@@ -45,21 +52,26 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
                 self.tableView.reloadData()
             }
         }else{
-            println("ログインしていない")
+            println("ここログインしていない")
         }
         
         // MARK: - RefreshControlをTableViewに設置
         refreshControl = UIRefreshControl()
         refreshControl!.addTarget(self, action: "refreshTableView", forControlEvents: UIControlEvents.ValueChanged)
         tableView.addSubview(refreshControl!)
+        println("ここまで読み込んだ")
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    override func viewWillAppear(animated: Bool) {
+        println("viewwillappear")
+        super.viewWillAppear(true)
+    }
     override func viewDidAppear(animated: Bool) {
         //TODO: Friendsの配列の中身が存在していなかったり、最終更新がupdateddateよりも新しかった場合、読み込む必要がある。
+        println("友達リスト　view did appear")
         if friendsArray?.count == 0{
             if (PFUser.currentUser() != nil){
                 println("ログイン済み")
@@ -78,14 +90,22 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
         }
         super.viewDidAppear(true)
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        println("viewwillappear")
-        super.viewWillAppear(true)
-    }
+
     
     // MARK: - TableViewのデリゲートメソッド
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        println("number of sections")
+        //MARK: - 最初に呼ばれるUITavleviewのデリゲートメソッド。ここでFriendsArrayの再取得を行う
+        if PFUser.currentUser() != nil{
+        var updatedFriendsArray = PFUser.currentUser().objectForKey("friends") as? [PFUser]
+        if updatedFriendsArray! == self.friendsArray!{
+            println("値の更新なし")
+        }else{
+            println("友達リスト更新済み")
+            friendsArray = updatedFriendsArray
+            self.tableView.reloadData()
+            }
+        }
         return 1
     }
     
@@ -96,6 +116,7 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        println("cell for row atindex")
         let cell : FriendsTableViewCell = tableView.dequeueReusableCellWithIdentifier("FriendsTableViewCell") as FriendsTableViewCell
         var friendData = friendsArray![indexPath.row]
         friendData.fetchInBackgroundWithBlock { (object :PFObject!, error :NSError!) -> Void in
@@ -112,6 +133,7 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        println("viewfor header")
         let headerView = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 30))
         let titleLabel = UILabel(frame: CGRectMake(10, 0, 100, 30))
         titleLabel.text = "友達(\(self.friendsArray!.count))"
@@ -122,14 +144,17 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        println("height for row")
         return 50.0
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        println("height for footer")
         return 0
     }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        println("height for header")
         return 30
     }
     
@@ -138,13 +163,14 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
         //TODO: 画面遷移の仕組みをnavigationcontrollerのpushからセグエに変更
         var appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         appDelegate.targetUser = friendsArray![indexPath.row]
-        /*var destinationViewController : DetailViewController = DetailViewController()
+        var destinationViewController : DetailViewController = DetailViewController()
         destinationViewController.navigationItem.backBarButtonItem?.tintColor = UIColor.whiteColor()
         destinationViewController.title = friendsArray![indexPath.row].objectForKey("name") as? String
         parentNavigationController!.pushViewController(destinationViewController, animated: true)
-        */
-        selectedIndex = indexPath.row
-        self.performSegueWithIdentifier("detail", sender: nil)
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        println("cell displayed")
     }
     
     // MARK: - セグエ
@@ -170,4 +196,6 @@ class FriendsTableViewController: UITableViewController,UINavigationControllerDe
             print("- 日付が同じです")
         }
     }
+    
+    
 }
